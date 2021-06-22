@@ -1,6 +1,12 @@
-import { Flex } from "@chakra-ui/react";
-import Head from "next/head";
+import { Box } from "@chakra-ui/react";
+import NavBar from "@/components/NavBar";
+import Hero from "@/components/Hero";
 
 export default function Home() {
-  return <Flex>Hi all</Flex>;
+  return (
+    <Box>
+      <NavBar />
+      <Hero />
+    </Box>
+  );
 }
