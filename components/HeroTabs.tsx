@@ -1,12 +1,4 @@
-import {
-  Flex,
-  Box,
-  Tabs,
-  TabList,
-  Tab,
-  TabPanels,
-  TabPanel,
-} from "@chakra-ui/react";
+import { Tabs, TabList, Tab, TabPanels, TabPanel } from "@chakra-ui/react";
 import React from "react";
 import SearchForm from "@/components/SearchForm";
 
@@ -14,8 +6,10 @@ export default function HeroTabs() {
   return (
     <Tabs
       variant="enclosed"
-      width={{ base: "300px", md: "300px" }}
+      width={{ base: "300px", md: "100%" }}
+      mx="auto"
       boxShadow="lg"
+      mt={{ md: 8 }}
     >
       <TabList>
         <Tab

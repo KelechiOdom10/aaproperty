@@ -11,7 +11,6 @@ import {
   Popover,
   PopoverTrigger,
   PopoverContent,
-  useColorModeValue,
   useBreakpointValue,
   useDisclosure,
 } from "@chakra-ui/react";
@@ -28,11 +27,11 @@ export default function NavBar() {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <Box position="sticky" boxShadow="md" top="0" zIndex={4}>
+    <Box position="sticky" boxShadow="md" top="0" zIndex={4} bg="white">
       <Flex
-        bg="white"
         color="gray.600"
         minH="60px"
+        mx={{ base: 0, md: 4 }}
         py={{ base: 2 }}
         px={{ base: 4 }}
         borderBottom={1}
@@ -111,7 +110,7 @@ const DesktopNav = () => {
   const router = useRouter();
   return (
     <Stack direction={"row"} spacing={4}>
-      {NAV_ITEMS.map(navItem => (
+      {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
           <Popover trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
@@ -122,7 +121,7 @@ const DesktopNav = () => {
                 }
                 href={navItem.href ?? "#"}
                 fontSize={"sm"}
-                fontWeight={500}
+                fontWeight={600}
                 color="gray.600"
                 _hover={{
                   textDecoration: "none",
@@ -143,7 +142,7 @@ const DesktopNav = () => {
                 minW={"sm"}
               >
                 <Stack>
-                  {navItem.children.map(child => (
+                  {navItem.children.map((child) => (
                     <DesktopSubNav key={child.label} {...child} />
                   ))}
                 </Stack>
@@ -171,7 +170,7 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
           <Text
             transition={"all .3s ease"}
             _groupHover={{ color: "pink.400" }}
-            fontWeight={500}
+            fontWeight={600}
           >
             {label}
           </Text>
@@ -195,8 +194,17 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
 
 const MobileNav = () => {
   return (
-    <Stack bg="white" p={4} display={{ md: "none" }}>
-      {NAV_ITEMS.map(navItem => (
+    <Stack
+      bg="white"
+      p={4}
+      display={{ md: "none" }}
+      minH="100vh"
+      position="fixed"
+      left={0}
+      top="60px"
+      width="100%"
+    >
+      {NAV_ITEMS.map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} />
       ))}
     </Stack>
@@ -242,7 +250,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
           align="start"
         >
           {children &&
-            children.map(child => (
+            children.map((child) => (
               <Link key={child.label} py={2} href={child.href}>
                 {child.label}
               </Link>

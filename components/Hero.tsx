@@ -14,17 +14,22 @@ export default function Hero() {
       alignItems="center"
       justifyContent="center"
     >
-      <VStack spacing={4}>
-        <Heading color="white" fontSize={{ base: "xl", md: "4xl" }}>
+      <VStack spacing={4} p={4}>
+        <Heading color="white" fontSize={{ base: "2xl", md: "4xl" }}>
           Find your dream home
         </Heading>
-        <Text textAlign="center" color="white">
+        <Text
+          textAlign="center"
+          color="white"
+          fontSize={{ base: "sm", md: "md" }}
+        >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum archite!
         </Text>
         <Box
           position={{ base: "absolute", md: "relative" }}
-          bottom={{ base: "-250px", md: "0" }}
+          bottom={{ base: "-260px", md: "0" }}
           right={{ md: 0 }}
+          width="100%"
         >
           <HeroTabs />
         </Box>
