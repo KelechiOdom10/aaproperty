@@ -11,27 +11,37 @@ import {
   Popover,
   PopoverTrigger,
   PopoverContent,
-  useBreakpointValue,
   useDisclosure,
 } from "@chakra-ui/react";
+import { Image } from "@/components/Image";
+import { NavItem } from "types";
+import { NAV_ITEMS } from "@/data/navItems";
 import {
-  HamburgerIcon,
-  CloseIcon,
-  ChevronDownIcon,
-  ChevronRightIcon,
-  PhoneIcon,
-} from "@chakra-ui/icons";
-import { Router, useRouter } from "next/dist/client/router";
+  BiPhone,
+  BiX,
+  BiMenu,
+  BiChevronDown,
+  BiChevronRight,
+} from "react-icons/bi";
+import { useState } from "react";
 
 export default function NavBar() {
-  const { isOpen, onToggle } = useDisclosure();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const onToggle = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <Box position="sticky" boxShadow="md" top="0" zIndex={4} bg="white">
+    <Box
+      as="nav"
+      position="sticky"
+      boxShadow="md"
+      top="0"
+      zIndex={4}
+      bg="white"
+    >
       <Flex
         color="gray.600"
-        minH="60px"
-        mx={{ base: 0, md: 4 }}
+        h="60px"
+        mx="auto"
         py={{ base: 2 }}
         px={{ base: 4 }}
         borderBottom={1}
@@ -39,16 +49,17 @@ export default function NavBar() {
         borderColor="gray.200"
         align={"center"}
         justify="space-between"
+        maxW="8xl"
       >
         <Flex justify={{ base: "center", md: "start" }} align="center">
-          <Text
-            textAlign={useBreakpointValue({ base: "center", md: "left" })}
-            fontFamily={"heading"}
-            fontWeight="bold"
-            color="gray.800"
-          >
-            LOGO
-          </Text>
+          <Link href="/">
+            <Image
+              src="/images/logo.png"
+              alt="AA Property Logo"
+              width="61px"
+              height="60px"
+            />
+          </Link>
 
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
             <DesktopNav />
@@ -65,41 +76,41 @@ export default function NavBar() {
           <IconButton
             display={{ base: "flex", md: "none" }}
             onClick={onToggle}
-            icon={<PhoneIcon />}
+            icon={<Icon as={BiPhone} w={5} h={5} />}
             variant={"ghost"}
-            aria-label={"Toggle Navigation"}
+            aria-label={"Call AA Property"}
+            color="black"
           />
           <Flex ml={{ base: -2 }} display={{ base: "flex", md: "none" }}>
             <IconButton
               onClick={onToggle}
               icon={
-                isOpen ? (
-                  <CloseIcon w={3} h={3} />
+                isMenuOpen ? (
+                  <Icon as={BiX} w={6} h={6} />
                 ) : (
-                  <HamburgerIcon w={5} h={5} />
+                  <Icon as={BiMenu} w={6} h={6} />
                 )
               }
               variant={"ghost"}
               aria-label={"Toggle Navigation"}
+              color="black"
             />
           </Flex>
           <Button
+            as="a"
             display={{ base: "none", md: "inline-flex" }}
+            rounded="sm"
             fontSize={"sm"}
             fontWeight={600}
-            color={"white"}
-            bg={"pink.400"}
-            href={"#"}
-            _hover={{
-              bg: "pink.300",
-            }}
+            colorScheme="brand"
+            href="/contact"
           >
-            Request a call
+            Contact Us
           </Button>
         </Stack>
       </Flex>
 
-      <Collapse in={isOpen} animateOpacity>
+      <Collapse in={isMenuOpen} animateOpacity>
         <MobileNav />
       </Collapse>
     </Box>
@@ -107,7 +118,6 @@ export default function NavBar() {
 }
 
 const DesktopNav = () => {
-  const router = useRouter();
   return (
     <Stack direction={"row"} spacing={4}>
       {NAV_ITEMS.map((navItem) => (
@@ -116,10 +126,7 @@ const DesktopNav = () => {
             <PopoverTrigger>
               <Link
                 p={2}
-                borderBottom={
-                  router.pathname === navItem.href && "2px pink solid"
-                }
-                href={navItem.href ?? "#"}
+                href={navItem.href}
                 fontSize={"sm"}
                 fontWeight={600}
                 color="gray.600"
@@ -163,14 +170,13 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
       display={"block"}
       p={2}
       rounded={"md"}
-      _hover={{ bg: "pink.50" }}
+      _hover={{ bg: "orange.50" }}
     >
       <Stack direction={"row"} align={"center"}>
         <Box>
           <Text
             transition={"all .3s ease"}
-            _groupHover={{ color: "pink.400" }}
-            fontWeight={600}
+            _groupHover={{ color: "orange.400" }}
           >
             {label}
           </Text>
@@ -185,7 +191,7 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
           align={"center"}
           flex={1}
         >
-          <Icon color={"pink.400"} w={5} h={5} as={ChevronRightIcon} />
+          <Icon color={"orange.400"} w={5} h={5} as={BiChevronRight} />
         </Flex>
       </Stack>
     </Link>
@@ -216,24 +222,24 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
 
   return (
     <Stack spacing={4} onClick={children && onToggle}>
-      <Flex
-        py={2}
-        as={Link}
-        href={href ?? "#"}
-        justify={"space-between"}
-        align={"center"}
-        _hover={{
-          textDecoration: "none",
-        }}
-      >
-        <Text fontWeight={600} color="gray.600">
+      <Flex py={2} justify={"space-between"} align={"center"}>
+        <Text
+          as={Link}
+          fontWeight={600}
+          color="gray.600"
+          href={href ?? "#"}
+          _hover={{
+            textDecoration: "none",
+          }}
+        >
           {label}
         </Text>
         {children && (
           <Icon
-            as={ChevronDownIcon}
+            as={BiChevronDown}
             transition="all .25s ease-in-out"
             transform={isOpen ? "rotate(180deg)" : ""}
+            cursor="pointer"
             w={6}
             h={6}
           />
@@ -260,85 +266,3 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
     </Stack>
   );
 };
-
-interface NavItem {
-  label: string;
-  subLabel?: string;
-  children?: Array<NavItem>;
-  href?: string;
-}
-
-const NAV_ITEMS: Array<NavItem> = [
-  {
-    label: "Home",
-    href: "/",
-  },
-  {
-    label: "Sales",
-    children: [
-      {
-        label: "Explore Design Work",
-        subLabel: "Trending Design to inspire you",
-        href: "#",
-      },
-      {
-        label: "New & Noteworthy",
-        subLabel: "Up-and-coming Designers",
-        href: "#",
-      },
-    ],
-  },
-  {
-    label: "Lettings",
-    children: [
-      {
-        label: "Job Board",
-        subLabel: "Find your dream design job",
-        href: "#",
-      },
-      {
-        label: "Freelance Projects",
-        subLabel: "An exclusive list for contract work",
-        href: "#",
-      },
-    ],
-  },
-  {
-    label: "About",
-    href: "/about",
-  },
-  {
-    label: "Services",
-    children: [
-      {
-        label: "Job Board",
-        subLabel: "Find your dream design job",
-        href: "#",
-      },
-      {
-        label: "Freelance Projects",
-        subLabel: "An exclusive list for contract work",
-        href: "#",
-      },
-    ],
-  },
-  {
-    label: "Legal",
-    children: [
-      {
-        label: "Job Board",
-        subLabel: "Find your dream design job",
-        href: "#",
-      },
-      {
-        label: "Freelance Projects",
-        subLabel: "An exclusive list for contract work",
-        href: "#",
-      },
-    ],
-  },
-  {
-    label: "Blog",
-    href: "/blog",
-  },
-];

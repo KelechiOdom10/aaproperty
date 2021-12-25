@@ -1,16 +1,17 @@
-import { Box } from "@chakra-ui/react";
-import NavBar from "@/components/NavBar";
-import Hero from "@/components/Hero";
-import FeatureSection from "@/components/FeatureSection";
-import CompanySection from "@/components/CompanySection";
+import Hero from "@/components/sections/HeroSection";
+import IntroSection from "@/components/sections/IntroSection";
+import CompanySection from "@/components/sections/CompanySection";
+import TopFeaturedSection from "@/components/sections/TopFeaturedSection";
+import ContactUsSection from "@/components/sections/ContactUsSection";
 
 export default function Home() {
   return (
-    <Box>
-      <NavBar />
+    <>
       <Hero />
-      <FeatureSection />
+      <IntroSection />
+      <TopFeaturedSection />
       <CompanySection />
-    </Box>
+      <ContactUsSection />
+    </>
   );
 }

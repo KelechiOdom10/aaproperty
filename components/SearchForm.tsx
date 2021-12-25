@@ -11,9 +11,10 @@ import {
   VStack,
   Stack,
   Select,
+  Icon,
 } from "@chakra-ui/react";
 import React from "react";
-import { SearchIcon } from "@chakra-ui/icons";
+import { IoLocation } from "react-icons/io5";
 
 //Bedroom input values dropdown
 const bedrooms = [
@@ -91,7 +92,7 @@ export default function SearchForm() {
               </FormLabel>
               <InputGroup borderRadius="sm">
                 <InputLeftElement pointerEvents="none">
-                  <SearchIcon color="gray.300" />
+                  <Icon as={IoLocation} w={5} h={5} color="gray.300" />
                 </InputLeftElement>
                 <Input
                   type="text"
@@ -177,7 +178,13 @@ export default function SearchForm() {
             </FormControl>
           </Stack>
 
-          <Button width="full" mt={4} type="submit" colorScheme="blue">
+          <Button
+            width="full"
+            mt={4}
+            type="submit"
+            colorScheme="brand"
+            rounded="sm"
+          >
             Search
           </Button>
         </VStack>

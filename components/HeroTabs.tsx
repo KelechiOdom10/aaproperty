@@ -14,22 +14,24 @@ export default function HeroTabs() {
       <TabList>
         <Tab
           bg="white"
+          rounded="none"
           borderBottom="0.2px solid #EDF2F7"
           borderRightRadius={0}
           _selected={{
             color: "white",
-            bg: "blue.500",
+            bg: "brand.500",
           }}
         >
           Buy
         </Tab>
         <Tab
           bg="white"
+          rounded="none"
           borderBottom="0.2px solid #EDF2F7"
           borderLeftRadius={0}
           _selected={{
             color: "white",
-            bg: "blue.500",
+            bg: "brand.500",
           }}
         >
           Rent
