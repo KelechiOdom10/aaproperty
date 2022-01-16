@@ -56,7 +56,7 @@ const maxPriceOptions = [
 ];
 
 //Pricing type options: conditional on let form
-const pricingtype = [
+const pricingType = [
   { value: "Any", label: "Any" },
   { value: "Monthly", label: "Monthly" },
   { value: "Weekly", label: "Weekly" },
