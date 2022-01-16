@@ -14,7 +14,7 @@ export default function CompanySection() {
       />
       <Image
         src="https://cdn.worldvectorlogo.com/logos/the-property-ombudsman.svg"
-        alt="Zoopla Logo"
+        alt="The Property Obudsman Logo"
         w={{ base: "110px", md: "140px" }}
         mt={2}
         mx={2}
@@ -22,23 +22,23 @@ export default function CompanySection() {
       />
       <Image
         src="https://connectproperty.com/wp-content/uploads/2020/09/connect-property-accreditations-arla.png"
-        alt="Zoopla Logo"
+        alt="Arla Logo"
         mx={2}
         mt={2}
         w={{ base: "120px", md: "150px" }}
         objectFit="contain"
       />
       <Image
-        src="https://www.bridges.co.uk/wp-content/uploads/2016/08/logo_naea.svg"
-        alt="Zoopla Logo"
+        src="https://en-academic.com/pictures/enwiki/78/National_Association_of_Estate_Agents.png"
+        alt="NAEA Logo"
         mx={2}
         mt={2}
-        w={{ base: "100px", md: "130px" }}
+        w={{ base: "120px", md: "160px" }}
         objectFit="contain"
       />
       <Image
         src="https://www.tenancydepositscheme.com/wp-content/uploads/2017/07/TDS-Member-Logo-Transparent-Large.png"
-        alt="Zoopla Logo"
+        alt="TDS Logo"
         mx={2}
         mt={2}
         w={{ base: "80px", md: "110px" }}
