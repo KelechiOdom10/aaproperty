@@ -8,9 +8,9 @@ import {
   Box,
   Icon,
 } from "@chakra-ui/react";
-import Property from "@/components/Property";
 import { FaArrowRight } from "react-icons/fa";
 import { definitions } from "types/supabase";
+import PropertyListing from "@/components/Propertylisting";
 
 type Props = {
   properties: Array<definitions["property"]>;
@@ -71,7 +71,7 @@ export default function TopFeaturedSection({ properties }: Props) {
             // })}
           >
             {properties.map((property) => (
-              <Property key={property.id} item={property} />
+              <PropertyListing key={property.id} item={property} />
             ))}
           </Flex>
         </Box>
