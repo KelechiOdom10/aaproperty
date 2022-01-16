@@ -6,14 +6,17 @@ import {
   Text,
   Button,
   Box,
-  css,
   Icon,
 } from "@chakra-ui/react";
-import { PROPERTIES } from "@/data/properties";
-import Property from "@/components/Property";
 import { FaArrowRight } from "react-icons/fa";
+import { definitions } from "types/supabase";
+import PropertyListing from "@/components/Propertylisting";
 
-export default function TopFeaturedSection() {
+type Props = {
+  properties: Array<definitions["property"]>;
+};
+
+export default function TopFeaturedSection({ properties }: Props) {
   return (
     <Box bg="gray.50">
       <Box as="section" mx={{ base: 2, md: "auto" }} py={12} maxW="6xl">
@@ -60,15 +63,15 @@ export default function TopFeaturedSection() {
             overflowX="auto"
             width="100%"
             flexWrap="nowrap"
-            alignItems="center"
+            alignItems="stretch"
             justifyContent={{ base: "flex-start", md: "space-between" }}
             // css={css({
             //   "-webkit-overflow-scrolling": "touch",
             //   "-ms-overflow-style": "-ms-autohiding-scrollbar",
             // })}
           >
-            {PROPERTIES.map((property) => (
-              <Property key={property.id} item={property} />
+            {properties.map((property) => (
+              <PropertyListing key={property.id} item={property} />
             ))}
           </Flex>
         </Box>

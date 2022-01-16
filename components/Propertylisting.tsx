@@ -4,16 +4,15 @@ import {
   Heading,
   Text,
   HStack,
-  Box,
   Icon,
   Badge,
 } from "@chakra-ui/react";
 import React from "react";
-import { Property } from "types";
 import { FaBath, FaBed, FaVectorSquare } from "react-icons/fa";
+import { definitions } from "types/supabase";
 
 type Props = {
-  item: Property;
+  item: definitions["property"];
 };
 
 type PropertyIconProps = {
@@ -47,7 +46,7 @@ export default function PropertyListing({ item }: Props) {
     >
       <Flex
         height={{ base: "140px", md: "180px" }}
-        backgroundImage={`url(${item.image})`}
+        backgroundImage={`url(${item.images[1]})`}
         position="relative"
         backgroundSize="cover"
         backgroundPosition="center"
@@ -70,15 +69,15 @@ export default function PropertyListing({ item }: Props) {
         <VStack align="start" spacing={1}>
           <HStack justify="space-between" w="full">
             <Heading fontSize={{ base: "15px", md: "17px" }}>
-              {item.name}
+              {item.title}
             </Heading>{" "}
-            {item.tag && (
+            {item.tags && (
               <Badge
                 variant="subtle"
                 colorScheme="orange"
                 fontSize={{ base: "10px", md: "12px" }}
               >
-                {item.tag}
+                {item.tags[0]}
               </Badge>
             )}
           </HStack>
@@ -88,16 +87,16 @@ export default function PropertyListing({ item }: Props) {
             fontSize={{ base: "xs", md: "sm" }}
             whiteSpace="normal"
           >
-            {item.address}
+            {item.address}, {item.postalCode}
           </Text>
         </VStack>
         <HStack spacing={4}>
           <PropertyIconContainer>
             <Icon as={FaBed} fontSize={{ base: "md", md: "18px" }} />{" "}
-            <Text>{item.numOfBeds}</Text>
+            <Text>{item.bedrooms}</Text>
           </PropertyIconContainer>
           <PropertyIconContainer>
-            <Icon as={FaBath} /> <Text>{item.numOfBaths}</Text>
+            <Icon as={FaBath} /> <Text>{item.bathrooms}</Text>
           </PropertyIconContainer>
           <PropertyIconContainer>
             <Icon as={FaVectorSquare} />{" "}
