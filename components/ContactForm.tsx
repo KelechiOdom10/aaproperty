@@ -28,7 +28,7 @@ export default function ContactForm() {
       <Box
         w={{ base: "100%", md: "35%" }}
         mx="auto"
-        bg="brand.600"
+        bg="brand.500"
         rounded="md"
       >
         <VStack align="start" py={10} px={6} color="white" spacing={4}>

@@ -56,7 +56,7 @@ export default function PropertyListing({ item }: Props) {
           position="absolute"
           top="3"
           right="3"
-          bg="brand.600"
+          bg="brand.500"
           rounded="sm"
           fontSize={{ base: "sm", md: "md" }}
           px={2}

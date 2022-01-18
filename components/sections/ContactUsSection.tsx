@@ -55,11 +55,9 @@ export default function ContactUsSection() {
           as="a"
           rounded="sm"
           my={6}
-          variant="ghost"
-          bg="white"
-          colorScheme="brand"
+          variant="secondary"
           size={useBreakpointValue({ base: "sm", sm: "md" })}
-          w={{ base: "full", md: "auto" }}
+          w={{ base: "80%", md: "auto" }}
           href="/contact"
         >
           Contact Us
