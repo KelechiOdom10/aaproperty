@@ -72,7 +72,7 @@ const furnishing = [
   { value: "Unfurnished", label: "Unfurnished" },
 ];
 
-export default function SearchForm() {
+export default function MiniSearchForm({ purpose }) {
   return (
     <Box my={2} mx={4} textAlign="left">
       <form>
@@ -182,7 +182,7 @@ export default function SearchForm() {
             width="full"
             mt={4}
             type="submit"
-            colorScheme="brand"
+            variant="primary"
             rounded="sm"
           >
             Search
