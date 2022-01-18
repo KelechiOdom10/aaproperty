@@ -5,13 +5,11 @@ import {
   SimpleGrid,
   Text,
   VStack,
-  useBreakpointValue,
 } from "@chakra-ui/react";
 import React from "react";
 import { INTRO_LIST } from "@/data/introList";
 
 export default function IntroSection() {
-  const buttonSize = useBreakpointValue({ base: "lg", sm: "md" });
   return (
     <VStack
       as="section"
@@ -60,14 +58,7 @@ export default function IntroSection() {
             <Text fontSize={{ base: "sm" }} my={4}>
               {data.description}
             </Text>
-            <Button
-              as="a"
-              w="full"
-              size={buttonSize}
-              rounded="sm"
-              colorScheme="brand"
-              href={data.href}
-            >
+            <Button as="a" w="full" variant="primary" href={data.href}>
               Find out more
             </Button>
           </Box>
