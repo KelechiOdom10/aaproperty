@@ -1,6 +1,5 @@
 import { Tabs, TabList, Tab, TabPanels, TabPanel } from "@chakra-ui/react";
-import React from "react";
-import SearchForm from "@/components/SearchForm";
+import MiniSearchForm from "@/components/MiniSearchForm";
 
 export default function HeroTabs() {
   return (
@@ -15,7 +14,7 @@ export default function HeroTabs() {
         <Tab
           bg="white"
           rounded="none"
-          borderBottom="0.2px solid #EDF2F7"
+          borderBottom="0.1px solid #EDF2F7"
           borderRightRadius={0}
           _selected={{
             color: "white",
@@ -27,7 +26,7 @@ export default function HeroTabs() {
         <Tab
           bg="white"
           rounded="none"
-          borderBottom="0.2px solid #EDF2F7"
+          borderBottom="0.1px solid #EDF2F7"
           borderLeftRadius={0}
           _selected={{
             color: "white",
@@ -39,10 +38,10 @@ export default function HeroTabs() {
       </TabList>
       <TabPanels bg="white">
         <TabPanel>
-          <SearchForm />
+          <MiniSearchForm purpose="buy" />
         </TabPanel>
         <TabPanel>
-          <SearchForm />
+          <MiniSearchForm purpose="rent" />
         </TabPanel>
       </TabPanels>
     </Tabs>

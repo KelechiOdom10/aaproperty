@@ -99,10 +99,9 @@ export default function NavBar() {
           <Button
             as="a"
             display={{ base: "none", md: "inline-flex" }}
-            rounded="sm"
             fontSize={"sm"}
             fontWeight={600}
-            colorScheme="brand"
+            variant="primary"
             href="/contact"
           >
             Contact Us
@@ -162,7 +161,7 @@ const DesktopNav = () => {
   );
 };
 
-const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
+const DesktopSubNav = ({ label, href }: NavItem) => {
   return (
     <Link
       href={href}
@@ -173,15 +172,9 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
       _hover={{ bg: "orange.50" }}
     >
       <Stack direction={"row"} align={"center"}>
-        <Box>
-          <Text
-            transition={"all .3s ease"}
-            _groupHover={{ color: "orange.400" }}
-          >
-            {label}
-          </Text>
-          <Text fontSize="sm">{subLabel}</Text>
-        </Box>
+        <Text transition={"all .3s ease"} _groupHover={{ color: "orange.500" }}>
+          {label}
+        </Text>
         <Flex
           transition={"all .3s ease"}
           transform={"translateX(-10px)"}
@@ -191,7 +184,7 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
           align={"center"}
           flex={1}
         >
-          <Icon color={"orange.400"} w={5} h={5} as={BiChevronRight} />
+          <Icon color={"orange.500"} w={5} h={5} as={BiChevronRight} />
         </Flex>
       </Stack>
     </Link>

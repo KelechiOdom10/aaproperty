@@ -11,34 +11,66 @@ export const theme = extendTheme({
     body: "'Open Sans', sans-serif",
     mono: "Menlo, monospace",
   },
+  styles: {
+    global: {
+      body: {
+        fontSize: "1em",
+
+        MozOsxFontSmoothing: "grayscale",
+        WebkitFontSmoothing: "antialiased",
+        textRendering: "optimizeLegibility",
+      },
+      html: {
+        scrollBehavior: "smooth",
+      },
+    },
+  },
   colors: {
     brand: {
       10: "#eceff6",
       50: "#d9e0ef",
-      100: "#d1d9ec",
-      200: "#b2c0e0",
-      300: "#8ca1d0",
-      400: "#6581c0",
-      500: "#3e62b1",
-      600: "#1842a1",
-      700: "#143786",
-      800: "##102c6b",
-      900: "#0c2151",
-    },
-    primary: {
-      50: "#ffe3e3",
-      100: "#ffc7c7",
-      200: "#ffabab",
-      300: "#ff8e8e",
-      400: "#ff7272",
-      500: "#ff5656",
-      600: "#FF4F4F",
-      700: "#aa3939",
-      800: "#802b2b",
-      900: "#551d1d",
+      100: "#5380e5",
+      200: "#3d70e2",
+      300: "#275fdf",
+      400: "#1f54cd",
+      500: "#1842a1",
+      600: "#113075",
+      700: "#0e275e",
+      800: "#0b1e48",
+      900: "#040b1c",
     },
     gray: {
       50: "#F8F8F9",
+    },
+  },
+  components: {
+    Button: {
+      baseStyle: {
+        fontWeight: "bold",
+      },
+      variants: {
+        primary: {
+          color: "white",
+          bg: "brand.500",
+          rounded: "sm",
+          fontSize: ["sm", "sm", "md", "md"],
+          _disabled: {
+            opacity: 0.6,
+          },
+          _hover: {
+            _disabled: {
+              bg: "brand.500",
+              opacity: 0.7,
+            },
+          },
+        },
+        secondary: {
+          color: "brand.500",
+          fontSize: ["sm", "sm", "md", "md"],
+          bg: "white",
+          borderColor: "none",
+        },
+      },
     },
   },
   config,
