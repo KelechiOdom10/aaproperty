@@ -1,5 +1,4 @@
 import {
-  Flex,
   Box,
   FormControl,
   FormLabel,
@@ -15,7 +14,7 @@ export default function ContactFormDetails() {
   return (
     <Box my={2} mx={{ base: 0, md: 4 }} textAlign="left">
       <form>
-        <VStack spacing={3} p={4}>
+        <VStack spacing={4} p={4}>
           <Stack
             direction={{ base: "column", md: "row" }}
             w="full"
@@ -24,7 +23,9 @@ export default function ContactFormDetails() {
             justify="space-between"
           >
             <FormControl id="firstName" isRequired>
-              <FormLabel fontWeight="bold">First Name</FormLabel>
+              <FormLabel fontWeight="bold" fontSize={{ base: "sm", md: "md" }}>
+                First Name
+              </FormLabel>
               <Input
                 type="text"
                 placeholder="Enter first name"
@@ -32,7 +33,9 @@ export default function ContactFormDetails() {
               />
             </FormControl>
             <FormControl id="lastName" isRequired>
-              <FormLabel fontWeight="bold">Last Name</FormLabel>
+              <FormLabel fontWeight="bold" fontSize={{ base: "sm", md: "md" }}>
+                Last Name
+              </FormLabel>
               <Input
                 type="text"
                 placeholder="Enter last name"
@@ -66,11 +69,9 @@ export default function ContactFormDetails() {
           <Button
             mt={4}
             type="submit"
-            bg="brand.600"
-            color="white"
+            variant="primary"
             rounded="sm"
             alignSelf="start"
-            _hover={{ bg: "brand.600", color: "white" }}
           >
             Send Message
           </Button>
