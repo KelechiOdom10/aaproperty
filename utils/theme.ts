@@ -72,6 +72,20 @@ export const theme = extendTheme({
         },
       },
     },
+    Link: {
+      baseStyle: {
+        color: "gray.600",
+        _focus: { boxShadow: "none" },
+      },
+      variants: {
+        primary: {
+          _hover: {
+            textDecoration: "none",
+            color: "gray.800",
+          },
+        },
+      },
+    },
   },
   config,
 });
