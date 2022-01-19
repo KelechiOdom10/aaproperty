@@ -53,6 +53,16 @@ export default function ContactFormDetails() {
               fontSize={{ base: "sm", md: "md" }}
             />
           </FormControl>
+          <FormControl id="subject">
+            <FormLabel fontSize={{ base: "sm", md: "md" }} fontWeight="bold">
+              Subject
+            </FormLabel>
+            <Input
+              type="text"
+              placeholder="Enter reason for contact"
+              fontSize={{ base: "sm", md: "md" }}
+            />
+          </FormControl>
           <FormControl id="contactMessage" isRequired>
             <FormLabel fontSize={{ base: "sm", md: "md" }} fontWeight="bold">
               Message
@@ -61,7 +71,7 @@ export default function ContactFormDetails() {
               resize="none"
               height="100px"
               variant="filled"
-              placeholder="Write your message here"
+              placeholder="Please include any useful details, i.e. current status, availability for viewings, etc."
               size="md"
             />
           </FormControl>
