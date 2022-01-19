@@ -129,10 +129,7 @@ const DesktopNav = () => {
                 fontSize={"sm"}
                 fontWeight={600}
                 color="gray.600"
-                _hover={{
-                  textDecoration: "none",
-                  color: "gray.800",
-                }}
+                variant="primary"
               >
                 {navItem.label}
               </Link>

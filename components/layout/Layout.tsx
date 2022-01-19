@@ -7,7 +7,9 @@ function Layout({ children }: { children: ReactNode }) {
   return (
     <Flex direction="column" minHeight="100vh">
       <NavBar />
-      <Box flex="1 0 auto">{children}</Box>
+      <Box as="main" flex="1 0 auto" minH="800px">
+        {children}
+      </Box>
       <Footer />
     </Flex>
   );
