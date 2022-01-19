@@ -10,6 +10,7 @@ import {
 import React from "react";
 import { FaBath, FaBed, FaVectorSquare } from "react-icons/fa";
 import { definitions } from "types/supabase";
+import ImageCarousel from "./ImageCarousel";
 
 type Props = {
   item: definitions["property"];
@@ -36,25 +37,26 @@ export default function PropertyListing({ item }: Props) {
   return (
     <Flex
       flexDirection="column"
+      _hover={{ transform: "scale(1.05)" }}
+      transition="transform .4s ease-in-out"
+      cursor={item.isAvailable ? "pointer" : "not-allowed"}
       flex="0 0 auto"
-      rounded="sm"
+      rounded="md"
       w={{ base: "240px", md: "260px" }}
-      bg="white"
-      boxShadow="sm"
+      boxShadow="md"
       mx={2}
       my={4}
     >
-      <Flex
+      <ImageCarousel
+        id={item.id}
+        images={item.images}
+        w={{ base: "240px", md: "260px" }}
         height={{ base: "140px", md: "180px" }}
-        backgroundImage={`url(${item.images[1]})`}
-        position="relative"
-        backgroundSize="cover"
-        backgroundPosition="center"
-        roundedTop="sm"
       >
         <Text
           position="absolute"
           top="3"
+          zIndex={5}
           right="3"
           bg="brand.500"
           rounded="sm"
@@ -64,32 +66,38 @@ export default function PropertyListing({ item }: Props) {
           color="white"
           fontWeight="semibold"
         >{`£ ${item.price.toLocaleString("en-us")}`}</Text>
-      </Flex>
-      <VStack width="100%" align="start" spacing={3} py={4} px={2}>
-        <VStack align="start" spacing={1}>
-          <HStack justify="space-between" w="full">
-            <Heading fontSize={{ base: "15px", md: "17px" }}>
-              {item.title}
-            </Heading>{" "}
-            {item.tags && (
-              <Badge
-                variant="subtle"
-                colorScheme="orange"
-                fontSize={{ base: "10px", md: "12px" }}
-              >
-                {item.tags[0]}
-              </Badge>
-            )}
-          </HStack>
-          <Text
-            w="90%"
-            color="gray.600"
-            fontSize={{ base: "xs", md: "sm" }}
-            whiteSpace="normal"
-          >
-            {item.address}, {item.postalCode}
-          </Text>
-        </VStack>
+      </ImageCarousel>
+      <VStack
+        width="100%"
+        align="start"
+        justify="space-between"
+        py={4}
+        px={2}
+        minH="150px"
+      >
+        <HStack justify="space-between" w="full">
+          <Heading fontSize={{ base: "15px", md: "17px" }}>
+            {item.title}
+          </Heading>{" "}
+          {item.tags && (
+            <Badge
+              variant="subtle"
+              colorScheme="orange"
+              fontSize={{ base: "10px", md: "12px" }}
+            >
+              {item.tags[0]}
+            </Badge>
+          )}
+        </HStack>
+        <Text
+          w="90%"
+          color="gray.600"
+          fontSize={{ base: "xs", md: "sm" }}
+          whiteSpace="normal"
+        >
+          {item.address}, {item.postalCode}
+        </Text>
+
         <HStack spacing={4}>
           <PropertyIconContainer>
             <Icon as={FaBed} fontSize={{ base: "md", md: "18px" }} />{" "}
