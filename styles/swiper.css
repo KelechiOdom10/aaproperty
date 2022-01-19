@@ -1,0 +1,37 @@
+.swiper-button-next,
+.swiper-button-prev {
+  width: 16px;
+  height: 16px;
+  padding: 12px;
+  color: #000000;
+  border-radius: 50%;
+  background: #ffffff;
+  top: 58%;
+  opacity: 0.8;
+}
+
+.swiper-button-prev {
+  background-size: 12px 12px;
+  background-image: url("/icons/leftArrow.svg") !important;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.swiper-button-next {
+  background-size: 12px 12px;
+  background-image: url("/icons/rightArrow.svg") !important;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  content: "";
+}
+
+.swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: #ffffff;
+  opacity: 1;
+}
