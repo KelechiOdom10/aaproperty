@@ -7,7 +7,11 @@ import { GetStaticProps } from "next";
 import { supabase } from "@/utils/supabaseClient";
 import { definitions } from "types/supabase";
 
-export default function Home({ properties }) {
+type Props = {
+  properties: definitions["property"][];
+};
+
+export default function Home({ properties }: Props) {
   return (
     <>
       <Hero />

@@ -75,8 +75,10 @@ export default function NavBar() {
         >
           <IconButton
             display={{ base: "flex", md: "none" }}
-            onClick={onToggle}
             icon={<Icon as={BiPhone} w={5} h={5} />}
+            onClick={() => {
+              window.open("tel:+44 20 7794 6559");
+            }}
             variant={"ghost"}
             aria-label={"Call AA Property"}
             color="black"

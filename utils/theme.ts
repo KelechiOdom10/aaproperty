@@ -47,12 +47,12 @@ export const theme = extendTheme({
     Button: {
       baseStyle: {
         fontWeight: "bold",
+        rounded: "sm",
       },
       variants: {
         primary: {
           color: "white",
           bg: "brand.500",
-          rounded: "sm",
           fontSize: ["sm", "sm", "md", "md"],
           _disabled: {
             opacity: 0.6,
@@ -69,6 +69,13 @@ export const theme = extendTheme({
           fontSize: ["sm", "sm", "md", "md"],
           bg: "white",
           borderColor: "none",
+        },
+        accent: {
+          color: "brand.500",
+          bg: "white",
+          border: "2px",
+          borderColor: "brand.500",
+          fontSize: ["sm", "sm", "md", "md"],
         },
       },
     },

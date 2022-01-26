@@ -20,7 +20,7 @@ type PropertyIconProps = {
   children: React.ReactNode;
 };
 
-const PropertyIconContainer = ({ children }: PropertyIconProps) => {
+export const PropertyIconContainer = ({ children }: PropertyIconProps) => {
   return (
     <HStack
       spacing={1}
@@ -36,12 +36,14 @@ const PropertyIconContainer = ({ children }: PropertyIconProps) => {
 export default function PropertyListing({ item }: Props) {
   return (
     <Flex
+      as="a"
+      href={`/details/${item.id}`}
       flexDirection="column"
       _hover={{ transform: "scale(1.05)" }}
       transition="transform .4s ease-in-out"
       cursor={item.isAvailable ? "pointer" : "not-allowed"}
       flex="0 0 auto"
-      rounded="md"
+      rounded="sm"
       w={{ base: "240px", md: "260px" }}
       boxShadow="md"
       mx={2}
@@ -65,9 +67,12 @@ export default function PropertyListing({ item }: Props) {
           py={1}
           color="white"
           fontWeight="semibold"
-        >{`£ ${item.price.toLocaleString("en-us")}`}</Text>
+        >{`£ ${item.price.toLocaleString("en-us")} ${
+          item.purpose === "rent" ? "pcm" : ""
+        }`}</Text>
       </ImageCarousel>
       <VStack
+        bg="white"
         width="100%"
         align="start"
         justify="space-between"
@@ -75,7 +80,13 @@ export default function PropertyListing({ item }: Props) {
         px={2}
         minH="150px"
       >
-        <HStack justify="space-between" w="full">
+        <Flex
+          flexDir={{ base: "column", md: "row" }}
+          justifyContent={{ base: "start", md: "space-between" }}
+          alignItems={{ base: "flex-start", md: "center" }}
+          width="full"
+          flexWrap="wrap"
+        >
           <Heading fontSize={{ base: "15px", md: "17px" }}>
             {item.title}
           </Heading>{" "}
@@ -84,11 +95,12 @@ export default function PropertyListing({ item }: Props) {
               variant="subtle"
               colorScheme="orange"
               fontSize={{ base: "10px", md: "12px" }}
+              mt={{ base: 1, md: 0 }}
             >
               {item.tags[0]}
             </Badge>
           )}
-        </HStack>
+        </Flex>
         <Text
           w="90%"
           color="gray.600"
