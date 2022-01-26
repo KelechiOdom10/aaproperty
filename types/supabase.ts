@@ -194,11 +194,11 @@ export interface definitions {
     /** Format: ARRAY */
     keyFeatures?: string[];
     /** Format: jsonb */
-    lettingDetails?: string;
+    lettingDetails?: LettingDetails;
     /** Format: text */
     title: string;
     /** Format: ARRAY */
-    tags?: unknown[];
+    tags?: string[];
     /**
      * Format: timestamp with time zone
      * @default now()
@@ -206,7 +206,19 @@ export interface definitions {
     createdAt: string;
     /** Format: bigint */
     size: number;
+    geom: Geometry;
   };
+}
+
+export interface Geometry {
+  type: string;
+  coordinates: number[];
+}
+export interface LettingDetails {
+  deposit: number;
+  letType: string;
+  furnishing: string;
+  availabilityDate: string;
 }
 
 export interface parameters {
