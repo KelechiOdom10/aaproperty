@@ -41,11 +41,11 @@ export default function ContactForm() {
             nonumy eirmod
           </Text>
           <VStack align="start" color="white" spacing={6} pt={6}>
-            <HStack>
+            <HStack as="a" href="tel:+44 20 7794 6559">
               <Icon as={AiFillPhone} color="yellow.300" w={5} h={5} />
               <Text fontSize={{ base: "xs", md: "sm" }}>020 7794 6559</Text>
             </HStack>
-            <HStack>
+            <HStack as="a" href="mailto:aa@aapropertyuk.com">
               <Icon as={AiFillMail} color="yellow.300" w={5} h={5} />
               <Text fontSize={{ base: "xs", md: "sm" }}>
                 aa@aapropertyuk.com
