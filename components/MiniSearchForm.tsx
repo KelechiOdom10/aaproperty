@@ -1,5 +1,10 @@
 import {
-  Flex,
+  minPriceOptions,
+  maxPriceOptions,
+  bedrooms,
+  propertyTypes,
+} from "@/data/formOptions";
+import {
   Box,
   FormControl,
   FormLabel,
@@ -16,63 +21,7 @@ import {
 import React from "react";
 import { IoLocation } from "react-icons/io5";
 
-//Bedroom input values dropdown
-const bedrooms = [
-  { value: "Studio", label: "Studio" },
-  { value: "1+", label: "One+" },
-  { value: "2+", label: "Two+" },
-  { value: "3+", label: "Three+" },
-  { value: "4+", label: "Four+" },
-  { value: "5+", label: "Five+" },
-  { value: "6+", label: "Six+" },
-  { value: "8+", label: "Eight+" },
-];
-
-//Property types dropdown menu items
-const propertyTypes = [
-  { value: "Any" },
-  { value: "Detached House" },
-  { value: "Semi-detached House" },
-  { value: "Town House" },
-  { value: "Terraced House" },
-  { value: "Flat" },
-  { value: "Studio" },
-  { value: "Garage" },
-  { value: "Unavailable" },
-];
-
-//Minimum pricing options
-const minPriceOptions = [
-  { value: "None", label: "None" },
-  { value: 200000, label: "£200,000" },
-  { value: 250000, label: "£250,000" },
-  { value: 300000, label: "£300,000" },
-];
-
-//Maximum pricing options
-const maxPriceOptions = [
-  { value: "Max", label: "Max" },
-  { value: 7000000, label: "£7,000,000" },
-];
-
-//Pricing type options: conditional on let form
-const pricingType = [
-  { value: "Any", label: "Any" },
-  { value: "Monthly", label: "Monthly" },
-  { value: "Weekly", label: "Weekly" },
-  { value: "S.o.f", label: "Share of Freehold" },
-  { value: "Freehold", label: "Freehold" },
-  { value: "Leasehold", label: "Leasehold" },
-];
-
-//Furnishing options: conditionally on let form
-const furnishing = [
-  { value: "Any", label: "Any" },
-  { value: "Furnished", label: "Furnished" },
-  { value: "Unfurnished", label: "Unfurnished" },
-];
-
-export default function MiniSearchForm({ purpose }) {
+export default function MiniSearchForm({ purpose }: { purpose?: string }) {
   return (
     <Box my={2} mx={4} textAlign="left">
       <form>
