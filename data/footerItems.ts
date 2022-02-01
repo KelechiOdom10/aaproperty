@@ -4,15 +4,15 @@ export const FOOTER_ITEMS = [
     children: [
       {
         label: "Property to rent",
-        href: "/search?type=rent",
+        href: "/search?purpose=rent",
       },
       {
         label: "Studio to rent",
-        href: "/search?type=rent&property=studio",
+        href: "/search?purpose=rent&type=studio",
       },
       {
         label: "Apartments to rent",
-        href: "/search?type=rent&property=flat",
+        href: "/search?purpose=rent&type=flat",
       },
     ],
   },
@@ -21,15 +21,15 @@ export const FOOTER_ITEMS = [
     children: [
       {
         label: "Property for sale",
-        href: "/search?type=buy",
+        href: "/search?purpose=buy",
       },
       {
         label: "New Homes for sale",
-        href: "/search?type=buy&property=house",
+        href: "/search?purpose=buy&type=house",
       },
       {
         label: "Apartments for sale",
-        href: "/search?type=buy&property=flat",
+        href: "/search?purpose=buy&type=flat",
       },
     ],
   },
