@@ -1,17 +1,23 @@
-import { Box, Image, AspectRatio } from "@chakra-ui/react";
+import { Box, Image, AspectRatio, ResponsiveValue } from "@chakra-ui/react";
 import { useState } from "react";
 import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { BsFillArrowRightCircleFill } from "react-icons/bs";
 
 type Props = {
   id: string;
   images: string[];
   children?: React.ReactChild | React.ReactNode;
+  ratio?: ResponsiveValue<number> | undefined;
   [x: string]: any;
 };
 
-function ImageCarousel({ id, images, children, ...props }: Props) {
+function ImageCarousel({
+  id,
+  images,
+  children,
+  ratio = 16 / 9,
+  ...props
+}: Props) {
   const [isNavigationShown, setIsNavigationShown] = useState(false);
 
   return (
@@ -29,7 +35,7 @@ function ImageCarousel({ id, images, children, ...props }: Props) {
       >
         {images.map((image, index) => (
           <SwiperSlide key={index}>
-            <AspectRatio ratio={16 / 9}>
+            <AspectRatio ratio={ratio}>
               <Image
                 src={image}
                 {...props}

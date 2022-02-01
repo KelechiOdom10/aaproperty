@@ -4,9 +4,7 @@ import {
   HStack,
   Icon,
   Image,
-  Link,
   Stack,
-  Text,
 } from "@chakra-ui/react";
 import React, { ReactChild, ReactNode } from "react";
 import { IconType } from "react-icons";
@@ -25,13 +23,14 @@ const PropertyContactButton = ({
   </Button>
 );
 
-const UtilityContactButton = ({
+export const UtilityButton = ({
   children,
   icon,
+  ...props
 }: {
   children: ReactNode | ReactChild;
   icon: IconType;
-}) => (
+} & ButtonProps) => (
   <PropertyContactButton
     w="full"
     variant="accent"
@@ -42,6 +41,7 @@ const UtilityContactButton = ({
       color: "white",
       border: "none",
     }}
+    {...props}
     leftIcon={<Icon as={icon} fontSize="lg" />}
   >
     {children}
@@ -98,8 +98,8 @@ function PropertyContactSection({
         Email Agent
       </PropertyContactButton>
       <HStack align="center" display={{ base: "none", md: "flex" }}>
-        <UtilityContactButton icon={BsShareFill}>Share</UtilityContactButton>
-        <UtilityContactButton icon={FiHeart}>Save</UtilityContactButton>
+        <UtilityButton icon={BsShareFill}>Share</UtilityButton>
+        <UtilityButton icon={FiHeart}>Save</UtilityButton>
       </HStack>
     </Stack>
   );

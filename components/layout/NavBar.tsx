@@ -35,7 +35,7 @@ export default function NavBar() {
       position="sticky"
       boxShadow="md"
       top="0"
-      zIndex={4}
+      zIndex={6}
       bg="white"
     >
       <Flex
@@ -55,6 +55,7 @@ export default function NavBar() {
           <Link href="/">
             <Image
               src="/images/logo.png"
+              priority={true}
               alt="AA Property Logo"
               width="61px"
               height="60px"
