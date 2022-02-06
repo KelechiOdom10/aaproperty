@@ -46,15 +46,15 @@ export const FOOTER_ITEMS = [
       },
       {
         label: "Terms & Conditions",
-        href: "#",
+        href: "/terms",
       },
       {
         label: "Compliance",
-        href: "#",
+        href: "/paperwork#compliance",
       },
       {
         label: "Privacy Policy",
-        href: "#",
+        href: "/privacy",
       },
     ],
   },
@@ -63,23 +63,23 @@ export const FOOTER_ITEMS = [
     children: [
       {
         label: "Facebook",
-        href: "#",
+        href: "https://www.facebook.com/aapropertyuk/?sk=allactivity&privacy_source=activity_log&log_filter=cluster_114",
       },
       {
         label: "Twitter",
-        href: "#",
+        href: "https://twitter.com/aapropertyukltd",
       },
       {
         label: "Instagram",
-        href: "#",
+        href: "https://instagram.com/aapropertyuk",
       },
       {
         label: "LinkedIn",
-        href: "#",
+        href: "https://www.linkedin.com/company/aa-property-services-uk-ltd/about/",
       },
       {
         label: "Pinterest",
-        href: "#",
+        href: "https://www.pinterest.com/aapropertyuk/",
       },
     ],
   },
