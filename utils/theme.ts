@@ -7,8 +7,8 @@ const config: ThemeConfig = {
 
 export const theme = extendTheme({
   fonts: {
-    heading: "'Open Sans', sans-serif",
-    body: "'Open Sans', sans-serif",
+    heading: "'Work Sans', sans-serif",
+    body: "'Work Sans', sans-serif",
     mono: "Menlo, monospace",
   },
   styles: {
