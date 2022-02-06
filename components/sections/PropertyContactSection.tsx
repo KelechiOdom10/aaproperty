@@ -1,9 +1,9 @@
 import {
   Button,
   ButtonProps,
+  Heading,
   HStack,
   Icon,
-  Image,
   Stack,
 } from "@chakra-ui/react";
 import React, { ReactChild, ReactNode } from "react";
@@ -39,7 +39,7 @@ export const UtilityButton = ({
       bg: "brand.700",
       boxShadow: "lg",
       color: "white",
-      border: "none",
+      borderColor: "brand.700",
     }}
     {...props}
     leftIcon={<Icon as={icon} fontSize="lg" />}
@@ -67,13 +67,9 @@ function PropertyContactSection({
       spacing={{ base: 2, md: 4 }}
       p={{ base: 2, md: 4 }}
     >
-      <Image
-        display={{ base: "none", md: "block" }}
-        src="/images/logo.png"
-        alt="AA Property Logo"
-        width="91.5px"
-        height="90px"
-      />
+      <Heading fontSize={{ base: "xl", md: "2xl" }}>
+        Interested in this property?
+      </Heading>
       <PropertyContactButton
         variant="accent"
         onClick={() => {
