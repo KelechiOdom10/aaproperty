@@ -2,10 +2,6 @@ import { NavItem } from "types";
 
 export const NAV_ITEMS: Array<NavItem> = [
   {
-    label: "Home",
-    href: "/",
-  },
-  {
     label: "Buy",
     href: "/search?purpose=buy",
     children: [
@@ -51,23 +47,33 @@ export const NAV_ITEMS: Array<NavItem> = [
     children: [
       {
         label: "Valuation & Consultancy",
-        href: "#",
+        href: "/services#valuation-and-consultancy",
       },
       {
         label: "Management",
-        href: "#",
+        href: "/services#management",
       },
+    ],
+  },
+  {
+    label: "Paperwork",
+    href: "/paperwork",
+    children: [
       {
         label: "Sales terms of business",
-        href: "#",
+        href: "/paperwork#termsofbusiness",
       },
       {
         label: "Agency Agreement Landlords",
-        href: "#",
+        href: "/paperwork#landlordagreement",
       },
       {
         label: "Fees",
-        href: "#",
+        href: "/paperwork#fees",
+      },
+      {
+        label: "Compliance",
+        href: "/paperwork#compliance",
       },
     ],
   },

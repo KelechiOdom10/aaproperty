@@ -1,0 +1,39 @@
+import { Heading, Link, VStack, Text } from "@chakra-ui/react";
+import React from "react";
+
+export default function ManagementSection() {
+  return (
+    <VStack
+      id="management"
+      spacing={4}
+      align={{ base: "center", md: "start" }}
+      my={6}
+    >
+      <Heading fontSize={{ base: "xl", md: "2xl", lg: "3xl" }}>
+        Management
+      </Heading>
+      <Text
+        fontSize={{ base: "sm", md: "md" }}
+        textAlign={{ base: "center", md: "start" }}
+      >
+        AA property services UK LTD provide a full property management service
+        where professional prospective tenants are fully vetted by a reputable
+        referencing service. We also cater for employees of various blue chip
+        companies looking for decent accommodation. Inventories and Tenancy
+        Agreements are prepared on your behalf. Rents are collected either on
+        monthly, quarterly, or half yearly basis together with regular
+        inspections on your property.For further information kindly refer to our
+        agency terms and conditions.
+      </Text>
+      <Link
+        as="a"
+        color="brand.400"
+        textDecoration="underline"
+        href="/images/management.jpeg"
+        isExternal
+      >
+        Learn More
+      </Link>
+    </VStack>
+  );
+}

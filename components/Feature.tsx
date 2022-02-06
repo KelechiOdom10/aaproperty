@@ -1,5 +1,5 @@
 import { AiOutlineCheck } from "react-icons/ai";
-import { HStack, Text } from "@chakra-ui/react";
+import { HStack, Icon, Text } from "@chakra-ui/react";
 import React from "react";
 
 type Props = {
@@ -8,11 +8,8 @@ type Props = {
 export default function Feature({ children }: Props) {
   return (
     <HStack align="center" p={2} spacing={3}>
-      <AiOutlineCheck />
-      <Text
-        textAlign={{ base: "center", md: "start" }}
-        fontSize={{ base: "sm", md: "md" }}
-      >
+      <Icon as={AiOutlineCheck} size="2em" color="brand.400" />
+      <Text textAlign="left" fontSize={{ base: "sm", md: "md" }}>
         {children}
       </Text>
     </HStack>
