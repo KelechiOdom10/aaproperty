@@ -1,17 +1,23 @@
-import { Stack, Flex, Heading, Text, Button, VStack } from "@chakra-ui/react";
+import {
+  Stack,
+  Flex,
+  Heading,
+  Text,
+  Button,
+  VStack,
+  Link,
+} from "@chakra-ui/react";
 import React from "react";
 import Feature from "@/components/Feature";
 
 export default function ValuationAndConsultancySection() {
   return (
     <Flex
+      id="valuation-and-consultancy"
       flexDir={{ base: "column", md: "row" }}
-      p={8}
-      mx={{ base: 2, md: "auto" }}
-      mt={{ base: "280px", md: 6 }}
-      mb={{ md: 6 }}
+      my={6}
+      mt={{ base: 0, md: 6 }}
       align="center"
-      maxW="6xl"
     >
       <Stack
         textAlign={{ base: "center", md: "left" }}
@@ -19,16 +25,32 @@ export default function ValuationAndConsultancySection() {
         w={{ base: "full", md: "55%" }}
         p={4}
       >
-        <Heading fontSize={{ base: "2xl", md: "4xl" }}>
-          This is the headline
+        <Heading fontSize={{ base: "xl", md: "2xl", lg: "3xl" }}>
+          Valuation and Professional Consultancy
         </Heading>
         <Text fontSize={{ base: "sm", md: "md" }}>
           {" "}
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore
+          Our Chartered Surveyors are RICS Registered Valuers and offer a
+          comprehensive range of professional services for both corporate and
+          individual clients on all types of residential and commercial
+          property.
+          <br />
+          <br />
+          We are members of the{" "}
+          <span>
+            <Link
+              as="a"
+              color="brand.400"
+              href="https://www.rics.org"
+              isExternal
+            >
+              Royal Institution of Chartered Surveyors
+            </Link>
+          </span>{" "}
+          and as such are governed by their strict regulations.
         </Text>
-        <Button w={{ base: "full", md: "50%" }} colorScheme="blue">
-          Get Started
+        <Button as="a" w={{ base: "full", md: "40%" }} href="/contact">
+          Contact Us
         </Button>
       </Stack>
       <VStack
@@ -37,19 +59,17 @@ export default function ValuationAndConsultancySection() {
         align={{ base: "center", md: "start" }}
       >
         <Feature>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
+          Valuation for all purposes including security, probate, taxation and
+          litigation
         </Feature>
         <Feature>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
+          Lease extensions and enfranchisement – both individual and collective
         </Feature>
         <Feature>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
+          Residential and commercial rent reviews and lease renewals
         </Feature>
         <Feature>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
-        </Feature>
-        <Feature>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
+          Advice on Landlord & Tenant issues as well as development advise
         </Feature>
       </VStack>
     </Flex>
