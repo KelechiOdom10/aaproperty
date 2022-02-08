@@ -13,6 +13,8 @@ import {
   Collapse,
   Button,
 } from "@chakra-ui/react";
+import dynamic from "next/dynamic";
+import { useMemo } from "react";
 import { IconType } from "react-icons";
 import { BiCalendar } from "react-icons/bi";
 import { FaBath, FaBed, FaHome, FaVectorSquare } from "react-icons/fa";
@@ -23,7 +25,6 @@ import {
 } from "react-icons/md";
 import { definitions } from "types/supabase";
 import ImageCarousel from "./ImageCarousel";
-import Map from "./Map";
 import { PropertyIconContainer } from "./Propertylisting";
 
 const PropertyIconItem = ({
@@ -59,6 +60,14 @@ type Props = {
 };
 
 function PropertyDetails({ property }: Props) {
+  const Map = useMemo(
+    () =>
+      dynamic(() => import("./Map"), {
+        loading: () => <p>Map loading...</p>,
+        ssr: false,
+      }),
+    []
+  );
   const { isOpen, onToggle } = useDisclosure();
 
   return (
@@ -203,7 +212,10 @@ function PropertyDetails({ property }: Props) {
           Show {isOpen ? "Less" : "More"}
         </Button>
       </VStack>
-      <Map coordinates={property.geom.coordinates} />
+      <Map
+        coordinates={property.geom.coordinates}
+        address={`${property.address}, ${property.postalCode}`}
+      />
     </VStack>
   );
 }
