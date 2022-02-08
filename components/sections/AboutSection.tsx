@@ -3,7 +3,7 @@ import React from "react";
 
 export default function AboutSection() {
   return (
-    <Box>
+    <Box mb={16}>
       <Flex
         backgroundImage={`linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.4) ), url(${"/images/about-us.jpg"})`}
         position="relative"
