@@ -120,7 +120,12 @@ function SearchResults({
         </>
       ) : (
         <VStack align="start" spacing={8}>
-          <Text fontSize="xl" fontStyle="italic" color="gray.600">
+          <Text
+            fontSize="xl"
+            fontStyle="italic"
+            color="gray.600"
+            p={{ base: 0, md: 6 }}
+          >
             <strong>Oops!</strong> No properties found, try refining your search
             by changing the filters
           </Text>

@@ -1,7 +1,10 @@
 import { Tabs, TabList, Tab, TabPanels, TabPanel } from "@chakra-ui/react";
 import MiniSearchForm from "@/components/MiniSearchForm";
+import { useState } from "react";
 
 export default function HeroTabs() {
+  const [purpose, setPurpose] = useState<"buy" | "rent">("buy");
+
   return (
     <Tabs
       variant="enclosed"
@@ -20,6 +23,7 @@ export default function HeroTabs() {
             color: "white",
             bg: "brand.500",
           }}
+          onClick={() => setPurpose("buy")}
         >
           Buy
         </Tab>
@@ -32,17 +36,13 @@ export default function HeroTabs() {
             color: "white",
             bg: "brand.500",
           }}
+          onClick={() => setPurpose("rent")}
         >
           Rent
         </Tab>
       </TabList>
-      <TabPanels bg="white">
-        <TabPanel>
-          <MiniSearchForm purpose="buy" />
-        </TabPanel>
-        <TabPanel>
-          <MiniSearchForm purpose="rent" />
-        </TabPanel>
+      <TabPanels bg="white" py={4} px={{ base: 2, md: 4 }} maxW="600px">
+        <MiniSearchForm purpose={purpose} />
       </TabPanels>
     </Tabs>
   );

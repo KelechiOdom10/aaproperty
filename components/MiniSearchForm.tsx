@@ -1,9 +1,4 @@
-import {
-  minPriceOptions,
-  maxPriceOptions,
-  bedrooms,
-  propertyTypes,
-} from "@/data/formOptions";
+import { bedrooms, propertyTypes, priceOptions } from "@/data/formOptions";
 import {
   Box,
   FormControl,
@@ -18,13 +13,46 @@ import {
   Select,
   Icon,
 } from "@chakra-ui/react";
+import { useRouter } from "next/router";
 import React from "react";
 import { IoLocation } from "react-icons/io5";
 
-export default function MiniSearchForm({ purpose }: { purpose?: string }) {
+export default function MiniSearchForm({
+  purpose,
+}: {
+  purpose: "buy" | "rent";
+}) {
+  const router = useRouter();
+  const [values, setValues] = React.useState({
+    location: "",
+    minRooms: "",
+    type: "",
+    minPrice: 0,
+    maxPrice: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    setValues({
+      ...values,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    router.push({
+      pathname: "/search",
+      query: { ...values, purpose },
+    });
+  };
+
+  const { location, minRooms, type, maxPrice, minPrice } = values;
+
   return (
-    <Box my={2} mx={4} textAlign="left">
-      <form>
+    <Box my={2} px={4} textAlign="left">
+      <form onSubmit={handleSubmit}>
         <VStack spacing={3}>
           <Stack
             direction={{ base: "column", md: "row" }}
@@ -37,7 +65,7 @@ export default function MiniSearchForm({ purpose }: { purpose?: string }) {
                 display={{ base: "none", md: "block" }}
                 fontWeight="bold"
               >
-                Location
+                City
               </FormLabel>
               <InputGroup borderRadius="sm">
                 <InputLeftElement pointerEvents="none">
@@ -45,7 +73,10 @@ export default function MiniSearchForm({ purpose }: { purpose?: string }) {
                 </InputLeftElement>
                 <Input
                   type="text"
-                  placeholder="eg. Oxford or NW3"
+                  name="location"
+                  value={location}
+                  onChange={handleChange}
+                  placeholder="Search city eg. Oxford, London..."
                   autoComplete="off"
                   fontSize={{ base: "sm", md: "md" }}
                 />
@@ -61,21 +92,27 @@ export default function MiniSearchForm({ purpose }: { purpose?: string }) {
               <HStack align="center">
                 <Select
                   placeholder="Min Price"
+                  name="minPrice"
+                  value={minPrice}
+                  onChange={handleChange}
                   fontSize={{ base: "sm", md: "md" }}
                 >
-                  {minPriceOptions.map((opt) => (
+                  {priceOptions[purpose].map((opt) => (
                     <option key={opt.value} value={opt.value}>
-                      {opt.label}
+                      {`${opt.label} ${purpose === "rent" ? "pcm" : ""}`}
                     </option>
                   ))}
                 </Select>
                 <Select
+                  name="maxPrice"
+                  value={maxPrice}
+                  onChange={handleChange}
                   placeholder="No max"
                   fontSize={{ base: "sm", md: "md" }}
                 >
-                  {maxPriceOptions.map((opt) => (
+                  {priceOptions[purpose].map((opt) => (
                     <option key={opt.value} value={opt.value}>
-                      {opt.label}
+                      {`${opt.label} ${purpose === "rent" ? "pcm" : ""}`}
                     </option>
                   ))}
                 </Select>
@@ -97,12 +134,15 @@ export default function MiniSearchForm({ purpose }: { purpose?: string }) {
                 Bedrooms
               </FormLabel>
               <Select
+                value={minRooms}
+                name="minRooms"
+                onChange={handleChange}
                 placeholder="No. of Bedrooms"
                 fontSize={{ base: "sm", md: "md" }}
               >
                 {bedrooms.map((opt) => (
                   <option key={opt.label} value={opt.value}>
-                    {opt.value}
+                    {opt.label}
                   </option>
                 ))}
               </Select>
@@ -116,11 +156,14 @@ export default function MiniSearchForm({ purpose }: { purpose?: string }) {
               </FormLabel>
               <Select
                 placeholder="Property Type"
+                name="type"
+                value={type}
+                onChange={handleChange}
                 fontSize={{ base: "sm", md: "md" }}
               >
                 {propertyTypes.map((opt) => (
                   <option key={opt.value} value={opt.value}>
-                    {opt.value}
+                    {opt.label}
                   </option>
                 ))}
               </Select>

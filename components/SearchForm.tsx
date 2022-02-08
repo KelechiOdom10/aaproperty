@@ -66,7 +66,7 @@ function SearchForm({
     });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLButtonElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const path = router.pathname;
     const { query } = router;
@@ -158,7 +158,7 @@ function SearchForm({
         </TabList>
       </Tabs>
       <Box textAlign="left">
-        <form>
+        <form onSubmit={handleSubmit}>
           <VStack spacing={4} divider={<StackDivider color="gray.100" />}>
             <FormControl id="location">
               <FormLabel fontWeight="bold">City</FormLabel>
@@ -261,7 +261,6 @@ function SearchForm({
               type="submit"
               variant="primary"
               rounded="sm"
-              onClick={handleSubmit}
             >
               Search
             </Button>
