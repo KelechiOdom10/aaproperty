@@ -11,7 +11,7 @@ export const FOOTER_ITEMS = [
         href: "/search?purpose=rent&type=studio",
       },
       {
-        label: "Apartments to rent",
+        label: "Flats to rent",
         href: "/search?purpose=rent&type=flat",
       },
     ],
@@ -28,7 +28,7 @@ export const FOOTER_ITEMS = [
         href: "/search?purpose=buy&type=house",
       },
       {
-        label: "Apartments for sale",
+        label: "Flats for sale",
         href: "/search?purpose=buy&type=flat",
       },
     ],
