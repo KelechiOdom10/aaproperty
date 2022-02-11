@@ -47,7 +47,7 @@ export const theme = extendTheme({
     Button: {
       baseStyle: {
         fontWeight: "bold",
-        rounded: "sm",
+        borderRadius: "6px",
       },
       variants: {
         primary: {

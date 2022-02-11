@@ -127,7 +127,7 @@ function SearchForm({
         <TabList bg="gray.50">
           <Tab
             w="50%"
-            roundedLeft="sm"
+            roundedLeft="6px"
             onClick={() => {
               setQueryPurpose("buy");
               setValues({
@@ -142,7 +142,7 @@ function SearchForm({
           </Tab>
           <Tab
             w="50%"
-            roundedBottomRight="sm"
+            roundedRight="6px"
             onClick={() => {
               setQueryPurpose("rent");
               setValues({
@@ -255,13 +255,7 @@ function SearchForm({
               </Select>
             </FormControl>
 
-            <Button
-              width="full"
-              mt={4}
-              type="submit"
-              variant="primary"
-              rounded="sm"
-            >
+            <Button width="full" mt={4} type="submit" variant="primary">
               Search
             </Button>
           </VStack>

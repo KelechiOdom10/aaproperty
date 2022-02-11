@@ -52,7 +52,6 @@ export default function ContactUsSection() {
         </Text>
         <Button
           as="a"
-          rounded="sm"
           my={6}
           variant="secondary"
           size={useBreakpointValue({ base: "sm", sm: "md" })}

@@ -170,13 +170,7 @@ export default function MiniSearchForm({
             </FormControl>
           </Stack>
 
-          <Button
-            width="full"
-            mt={4}
-            type="submit"
-            variant="primary"
-            rounded="sm"
-          >
+          <Button width="full" mt={4} type="submit" variant="primary">
             Search
           </Button>
         </VStack>
