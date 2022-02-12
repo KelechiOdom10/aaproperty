@@ -67,7 +67,10 @@ function PropertyContactSection({
       spacing={{ base: 2, md: 4 }}
       p={{ base: 2, md: 4 }}
     >
-      <Heading fontSize={{ base: "xl", md: "2xl" }}>
+      <Heading
+        fontSize={{ base: "xl", md: "2xl" }}
+        display={{ base: "none", md: "block" }}
+      >
         Interested in this property?
       </Heading>
       <PropertyContactButton
