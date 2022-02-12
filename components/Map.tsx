@@ -25,7 +25,7 @@ function Map({ coordinates, address }: Props) {
       center={[center.lat, center.lng]}
       zoom={15}
       scrollWheelZoom={false}
-      style={{ width: "100%", height: "42vh" }}
+      style={{ width: "100%", height: "42vh", zIndex: 0 }}
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
