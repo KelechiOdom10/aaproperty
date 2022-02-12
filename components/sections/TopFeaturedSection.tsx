@@ -45,8 +45,9 @@ export default function TopFeaturedSection({ properties }: Props) {
           </VStack>
 
           <Button
+            as="a"
+            href="/search?purpose=buy"
             background="brand.10"
-            rounded="sm"
             border="1px solid #d1d9ec"
             rightIcon={<Icon as={FaArrowRight} color="brand.500" />}
             color="brand.500"
@@ -65,10 +66,6 @@ export default function TopFeaturedSection({ properties }: Props) {
             flexWrap="nowrap"
             alignItems="stretch"
             justifyContent={{ base: "flex-start", md: "space-between" }}
-            // css={css({
-            //   "-webkit-overflow-scrolling": "touch",
-            //   "-ms-overflow-style": "-ms-autohiding-scrollbar",
-            // })}
           >
             {properties.map((property) => (
               <PropertyListing key={property.id} item={property} />

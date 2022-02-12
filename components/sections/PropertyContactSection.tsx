@@ -4,6 +4,7 @@ import {
   Heading,
   HStack,
   Icon,
+  Link,
   Stack,
 } from "@chakra-ui/react";
 import React, { ReactChild, ReactNode } from "react";
@@ -14,10 +15,14 @@ import { FiHeart } from "react-icons/fi";
 import { definitions } from "types/supabase";
 import { useRouter } from "next/router";
 
+type ContactButtonProps = {
+  children: ReactChild | ReactNode;
+  [x: string]: any;
+};
 const PropertyContactButton = ({
   children,
   ...props
-}: { children: ReactNode | ReactChild } & ButtonProps) => (
+}: ContactButtonProps & ButtonProps) => (
   <Button size="lg" {...props}>
     {children}
   </Button>
@@ -74,10 +79,9 @@ function PropertyContactSection({
         Interested in this property?
       </Heading>
       <PropertyContactButton
+        as="a"
+        href="tel:+44 20 7794 6559"
         variant="accent"
-        onClick={() => {
-          window.open("tel:+44 20 7794 6559");
-        }}
         leftIcon={<Icon as={BsFillTelephoneFill} />}
       >
         Call Agent
