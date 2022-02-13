@@ -16,7 +16,7 @@ function App({ Component, pageProps }: AppProps) {
         options={theme.config}
         value={theme.config.initialColorMode}
       >
-        <NextNProgress color="#1842a1" />
+        <NextNProgress color="#1842a1" options={{ showSpinner: false }} />
         <Layout>
           <Component {...pageProps} />
         </Layout>
