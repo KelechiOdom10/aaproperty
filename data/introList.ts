@@ -4,24 +4,24 @@ export const INTRO_LIST: Array<IntroItem> = [
     heading: "Buy",
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque iste",
-    href: "#",
+    href: "/search?purpose=buy",
   },
   {
     heading: "Rent",
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque iste",
-    href: "#",
+    href: "/search?purpose=rent",
   },
   {
     heading: "Sell",
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque iste",
-    href: "#",
+    href: "/contact?subject=Sell",
   },
   {
-    heading: "Let",
+    heading: "Valuation",
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque iste",
-    href: "#",
+    href: "/contact?subject=Valuation",
   },
 ];
