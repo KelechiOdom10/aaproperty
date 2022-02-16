@@ -10,6 +10,7 @@ import {
 import React from "react";
 import { FaBath, FaBed, FaVectorSquare } from "react-icons/fa";
 import { definitions } from "types/supabase";
+import { CustomLink } from "./CustomLink";
 import ImageCarousel from "./ImageCarousel";
 
 type Props = {
@@ -36,7 +37,7 @@ export const PropertyIconContainer = ({ children }: PropertyIconProps) => {
 export default function PropertyListing({ item }: Props) {
   return (
     <Flex
-      as="a"
+      as={CustomLink}
       href={`/details/${item.id}`}
       flexDirection="column"
       _hover={{ transform: "scale(1.05)" }}

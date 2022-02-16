@@ -1,5 +1,6 @@
 import { Heading, Link, VStack, Text } from "@chakra-ui/react";
 import React from "react";
+import { CustomLink } from "../CustomLink";
 
 export default function ManagementSection() {
   return (
@@ -26,7 +27,7 @@ export default function ManagementSection() {
         agency terms and conditions.
       </Text>
       <Link
-        as="a"
+        as={CustomLink}
         color="brand.400"
         textDecoration="underline"
         href="/images/management.jpeg"

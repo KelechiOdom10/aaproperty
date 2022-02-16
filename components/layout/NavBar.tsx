@@ -24,6 +24,7 @@ import {
   BiChevronRight,
 } from "react-icons/bi";
 import { useState } from "react";
+import { CustomLink } from "../CustomLink";
 
 export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -52,7 +53,7 @@ export default function NavBar() {
         maxW="8xl"
       >
         <Flex justify={{ base: "center", md: "start" }} align="center">
-          <Link href="/">
+          <CustomLink href="/">
             <Image
               src="/images/logo.png"
               priority={true}
@@ -60,7 +61,7 @@ export default function NavBar() {
               width="61px"
               height="60px"
             />
-          </Link>
+          </CustomLink>
 
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
             <DesktopNav />
@@ -75,7 +76,7 @@ export default function NavBar() {
           align="center"
         >
           <IconButton
-            as="a"
+            as={CustomLink}
             href="tel:+44 20 7794 6559"
             display={{ base: "flex", md: "none" }}
             icon={<Icon as={BiPhone} w={5} h={5} />}
@@ -99,7 +100,7 @@ export default function NavBar() {
             />
           </Flex>
           <Button
-            as="a"
+            as={CustomLink}
             display={{ base: "none", md: "inline-flex" }}
             fontSize={"sm"}
             fontWeight={600}
@@ -125,7 +126,7 @@ const DesktopNav = () => {
         <Box key={navItem.label}>
           <Popover trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
-              <Link
+              <CustomLink
                 p={2}
                 href={navItem.href}
                 fontSize={"sm"}
@@ -134,7 +135,7 @@ const DesktopNav = () => {
                 variant="primary"
               >
                 {navItem.label}
-              </Link>
+              </CustomLink>
             </PopoverTrigger>
 
             {navItem.children && (
@@ -162,15 +163,13 @@ const DesktopNav = () => {
 
 const DesktopSubNav = ({ label, href }: NavItem) => {
   return (
-    <Link
-      href={href}
-      role={"group"}
-      display={"block"}
-      p={2}
-      rounded={"md"}
-      _hover={{ bg: "orange.50" }}
-    >
-      <Stack direction={"row"} align={"center"}>
+    <CustomLink href={href} role={"group"} display={"block"} rounded={"md"}>
+      <Stack
+        direction={"row"}
+        align={"center"}
+        p={2}
+        _hover={{ bg: "orange.50" }}
+      >
         <Text transition={"all .3s ease"} _groupHover={{ color: "orange.500" }}>
           {label}
         </Text>
@@ -186,7 +185,7 @@ const DesktopSubNav = ({ label, href }: NavItem) => {
           <Icon color={"orange.500"} w={5} h={5} as={BiChevronRight} />
         </Flex>
       </Stack>
-    </Link>
+    </CustomLink>
   );
 };
 
@@ -216,7 +215,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
     <Stack spacing={4} onClick={children && onToggle}>
       <Flex py={2} justify={"space-between"} align={"center"}>
         <Text
-          as={Link}
+          as={CustomLink}
           fontWeight={600}
           color="gray.600"
           href={href ?? "#"}
@@ -249,9 +248,9 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
         >
           {children &&
             children.map((child) => (
-              <Link key={child.label} py={2} href={child.href}>
+              <CustomLink key={child.label} py={2} href={child.href}>
                 {child.label}
-              </Link>
+              </CustomLink>
             ))}
         </Stack>
       </Collapse>

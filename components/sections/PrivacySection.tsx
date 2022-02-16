@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import React, { ReactNode } from "react";
 import { BsArrowRightCircle } from "react-icons/bs";
+import { CustomLink } from "../CustomLink";
 
 const PrivacyText = ({ children }: { children: ReactNode }) => (
   <Text as="div" fontSize={{ base: "sm", md: "md" }}>
@@ -127,18 +128,18 @@ export default function PrivacySection() {
       <PrivacyText>
         {" "}
         Please note that all products are supplied subject to our{" "}
-        <Link as="a" color="brand.400" href="/terms">
+        <CustomLink underline color="brand.400" href="/terms">
           Terms and Conditions.
-        </Link>{" "}
+        </CustomLink>{" "}
       </PrivacyText>
       <PrivacySubHeading>Contact Us</PrivacySubHeading>
       <PrivacyText>
         {" "}
         If you have any comments or queries in connection with our privacy
         policy, please{" "}
-        <Link as="a" color="brand.400" href="/contact">
+        <CustomLink underline color="brand.400" href="/contact">
           contact us.
-        </Link>{" "}
+        </CustomLink>{" "}
       </PrivacyText>
     </VStack>
   );

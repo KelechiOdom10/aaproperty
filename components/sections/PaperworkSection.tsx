@@ -15,6 +15,7 @@ import {
 import { useRouter } from "next/router";
 import React, { ReactNode } from "react";
 import { BsFileEarmarkPdf } from "react-icons/bs";
+import { CustomLink } from "../CustomLink";
 
 const AccordionTitle = ({ children }: { children: ReactNode }) => (
   <Flex h="60px" align="center">
@@ -34,7 +35,7 @@ const IconDocumentItem = ({
   text: ReactNode;
   href: string;
 }) => (
-  <HStack as="a" href={href} target="_blank" rel="noreferrer noopener">
+  <HStack as={CustomLink} href={href} target="_blank" rel="noreferrer noopener">
     <Icon as={BsFileEarmarkPdf} fontSize={{ base: "md", md: "lg" }} />
     <Text fontSize={{ base: "sm", md: "md" }}>{text}</Text>
   </HStack>

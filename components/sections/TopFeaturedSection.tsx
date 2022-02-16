@@ -11,6 +11,7 @@ import {
 import { FaArrowRight } from "react-icons/fa";
 import { definitions } from "types/supabase";
 import PropertyListing from "@/components/Propertylisting";
+import { CustomLink } from "../CustomLink";
 
 type Props = {
   properties: Array<definitions["property"]>;
@@ -45,7 +46,7 @@ export default function TopFeaturedSection({ properties }: Props) {
           </VStack>
 
           <Button
-            as="a"
+            as={CustomLink}
             href="/search?purpose=buy"
             background="brand.10"
             border="1px solid #d1d9ec"
