@@ -8,6 +8,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { INTRO_LIST } from "@/data/introList";
+import { CustomLink } from "../CustomLink";
 
 export default function IntroSection() {
   return (
@@ -58,7 +59,7 @@ export default function IntroSection() {
             <Text fontSize={{ base: "sm" }} my={4}>
               {data.description}
             </Text>
-            <Button as="a" w="full" variant="primary" href={data.href}>
+            <Button as={CustomLink} w="full" variant="primary" href={data.href}>
               Find out more
             </Button>
           </Box>

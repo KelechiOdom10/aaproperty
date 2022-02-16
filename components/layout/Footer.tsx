@@ -2,7 +2,6 @@ import { ReactNode } from "react";
 import {
   Box,
   Container,
-  Link,
   SimpleGrid,
   Stack,
   Text,
@@ -13,16 +12,17 @@ import {
 } from "@chakra-ui/react";
 import { FaInstagram, FaTwitter, FaFacebook } from "react-icons/fa";
 import { FOOTER_ITEMS } from "@/data/footerItems";
+import { CustomLink } from "../CustomLink";
 
 const Logo = () => {
   return (
-    <Link href="/">
+    <CustomLink href="/">
       <Image
         src="/images/logo-transparent.png"
         alt="AA Property Logo"
         width="80px"
       />
-    </Link>
+    </CustomLink>
   );
 };
 
@@ -39,9 +39,9 @@ const SocialButton = ({
     <IconButton
       aria-label={label}
       variant="ghost"
-      as="a"
+      as={CustomLink}
       href={href}
-      target="_blank"
+      isExternal
       rel="noopener noreferrer"
       rounded="full"
       icon={<Icon as={icon} w={8} h={8} />}
@@ -95,14 +95,15 @@ export default function Footer() {
               <Stack align="flex-start" key={item.header}>
                 <ListHeader>{item.header}</ListHeader>
                 {item.children.map((linkItem) => (
-                  <Link
+                  <CustomLink
                     key={linkItem.label}
                     fontSize={{ base: "sm", md: "md" }}
+                    underline
                     href={linkItem.href}
                     isExternal={item.header === "Follow Us"}
                   >
                     {linkItem.label}
-                  </Link>
+                  </CustomLink>
                 ))}
               </Stack>
             );

@@ -14,6 +14,7 @@ import { IoIosMail } from "react-icons/io";
 import { FiHeart } from "react-icons/fi";
 import { definitions } from "types/supabase";
 import { useRouter } from "next/router";
+import { CustomLink } from "../CustomLink";
 
 type ContactButtonProps = {
   children: ReactChild | ReactNode;
@@ -79,7 +80,7 @@ function PropertyContactSection({
         Interested in this property?
       </Heading>
       <PropertyContactButton
-        as="a"
+        as={CustomLink}
         href="tel:+44 20 7794 6559"
         variant="accent"
         leftIcon={<Icon as={BsFillTelephoneFill} />}

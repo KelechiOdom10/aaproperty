@@ -9,6 +9,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import Feature from "@/components/Feature";
+import { CustomLink } from "../CustomLink";
 
 export default function ValuationAndConsultancySection() {
   return (
@@ -39,7 +40,7 @@ export default function ValuationAndConsultancySection() {
           We are members of the{" "}
           <span>
             <Link
-              as="a"
+              as={CustomLink}
               color="brand.400"
               href="https://www.rics.org"
               isExternal
@@ -49,7 +50,12 @@ export default function ValuationAndConsultancySection() {
           </span>{" "}
           and as such are governed by their strict regulations.
         </Text>
-        <Button as="a" w={{ base: "full", md: "40%" }} href="/contact">
+        <Button
+          as={CustomLink}
+          color="black"
+          w={{ base: "full", md: "40%" }}
+          href="/contact"
+        >
           Contact Us
         </Button>
       </Stack>

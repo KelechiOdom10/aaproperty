@@ -8,6 +8,7 @@ import {
   AspectRatio,
 } from "@chakra-ui/react";
 import React from "react";
+import { CustomLink } from "../CustomLink";
 
 export default function ContactUsSection() {
   return (
@@ -51,7 +52,7 @@ export default function ContactUsSection() {
           laborum eveniet quaerat aepe maxime r adipisici
         </Text>
         <Button
-          as="a"
+          as={CustomLink}
           my={6}
           variant="secondary"
           size={useBreakpointValue({ base: "sm", sm: "md" })}

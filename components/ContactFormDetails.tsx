@@ -119,13 +119,7 @@ export default function ContactFormDetails() {
             />
           </FormControl>
 
-          <Button
-            mt={4}
-            type="submit"
-            variant="primary"
-            rounded="sm"
-            alignSelf="start"
-          >
+          <Button mt={4} type="submit" variant="primary" alignSelf="start">
             Send Message
           </Button>
         </VStack>

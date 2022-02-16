@@ -16,6 +16,7 @@ import { PropertyIconContainer } from "./Propertylisting";
 import { UtilityButton } from "./sections/PropertyContactSection";
 import { IoIosMail } from "react-icons/io";
 import { useRouter } from "next/router";
+import { CustomLink } from "./CustomLink";
 
 export default function PropertyResultListing({
   property,
@@ -39,7 +40,7 @@ export default function PropertyResultListing({
       overflow="hidden"
     >
       <Flex
-        as="a"
+        as={CustomLink}
         href={`/details/${property.id}`}
         flexDir={{ base: "column", sm: "row" }}
         w="full"
