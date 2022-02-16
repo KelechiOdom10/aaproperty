@@ -13,7 +13,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
-import React, { ReactNode } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import { BsFileEarmarkPdf } from "react-icons/bs";
 import { CustomLink } from "../CustomLink";
 
@@ -42,23 +42,47 @@ const IconDocumentItem = ({
 );
 
 export default function PaperworkSection() {
-  const { asPath } = useRouter();
+  const { asPath, events } = useRouter();
+  const documents = [
+    "termsofbusiness",
+    "landlordagreement",
+    "fees",
+    "compliance",
+  ];
+  const [index, setIndex] = useState(0);
 
-  const setDefault = () => {
-    const hash = asPath.split("#")[1];
-    switch (hash) {
-      case "termsOfBusiness":
-        return 0;
-      case "landlordagreement":
-        return 1;
-      case "fees":
-        return 2;
-      case "compliance":
-        return 3;
-      default:
-        return 0;
-    }
-  };
+  useEffect(() => {
+    const hash = asPath.substr(asPath.indexOf("#") + 1);
+    setIndex(hash ? documents.indexOf(hash) : 0);
+
+    const setDefaultIndex = (url: string) => {
+      const hash = url.split("#")[1];
+      switch (hash) {
+        case "termsofbusiness":
+          setIndex(0);
+          break;
+        case "landlordagreement":
+          setIndex(1);
+          break;
+        case "fees":
+          setIndex(2);
+          break;
+        case "compliance":
+          setIndex(3);
+          break;
+        default:
+          setIndex(0);
+          break;
+      }
+    };
+
+    events.on("hashChangeStart", setDefaultIndex);
+    console.log(index);
+
+    return () => {
+      events.off("hashChangeStart", () => {});
+    };
+  }, [asPath, events]);
 
   return (
     <VStack
@@ -72,8 +96,8 @@ export default function PaperworkSection() {
       <Heading fontSize={{ base: "lg", md: "2xl" }}>
         Important Documents
       </Heading>
-      <Accordion w="full" defaultIndex={setDefault()} allowToggle>
-        <AccordionItem id="termsOfBusiness">
+      <Accordion w="full" index={index} allowToggle>
+        <AccordionItem id="termsOfBusiness" onClick={() => setIndex(0)}>
           <AccordionTitle>Sales Terms of Business</AccordionTitle>
           <AccordionPanel pb={4}>
             <IconDocumentItem
@@ -83,7 +107,7 @@ export default function PaperworkSection() {
           </AccordionPanel>
         </AccordionItem>
 
-        <AccordionItem id="landlordagreement">
+        <AccordionItem id="landlordagreement" onClick={() => setIndex(1)}>
           <AccordionTitle>Agency Agreement - Landlords</AccordionTitle>
           <AccordionPanel pb={4}>
             <IconDocumentItem
@@ -92,7 +116,7 @@ export default function PaperworkSection() {
             />
           </AccordionPanel>
         </AccordionItem>
-        <AccordionItem id="fees">
+        <AccordionItem id="fees" onClick={() => setIndex(2)}>
           <AccordionTitle>Fees</AccordionTitle>
           <AccordionPanel pb={4}>
             <VStack w="full" align="start">
@@ -111,7 +135,7 @@ export default function PaperworkSection() {
             </VStack>
           </AccordionPanel>
         </AccordionItem>
-        <AccordionItem id="compliance">
+        <AccordionItem id="compliance" onClick={() => setIndex(3)}>
           <AccordionTitle>Compliance</AccordionTitle>
           <AccordionPanel pb={4}>
             <VStack w="full" align="start">
