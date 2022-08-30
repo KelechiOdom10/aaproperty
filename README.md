@@ -1,34 +1,48 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# AA Property Real Estate Website
 
-## Getting Started
+* This is a client project focused on redesigning AA Property's current website as it is outdated and doesn't have the customer reach it needs. The website was made with Next.js and Supabase on the backend.
 
-First, run the development server:
+## Key Features
+- Display list of properties available to buy and sell
+- Filter properties based on purpose, min/max price, min no. of bedrooms, min no. of bathrooms, property type and location
+- Sort functionality for properties
+- Get Individual product details
+- Able to send an email enquiring about specific properties
+- Can view all services offered by the business
+- Able to view all paperwork including terms of business, fees and compliance
+
+## Getting Started 
+
+Clone the repository
+
+```bash
+git clone https://github.com/KelechiOdom10/aaproperty.git
+```
+
+Fill your .env variables:
+```
+NEXT_PUBLIC_SUPABASE_URL={YOUR SUPABASE URL}
+NEXT_PUBLIC_SUPABASE_ANON_KEY={YOUR SUPABASE ANON KEY}
+NEXT_PUBLIC_GOOGLE_MAPS_API_KEY={YOUR GOOGLE MAPS API KEY}
+```
+
+Install deps:
+
+```bash
+npm install
+```
+
+Run Next dev server:
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Nice to haves
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+- [ ] User authentication
+- [ ] Ability to add properties to wishlist
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Contributing 
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This is an open source project, and contributions of any kind are welcome and appreciated. Open issues, bugs, and feature requests are all listed on the [issues](https://github.com/KelechiOdom10/aaproperty/issues) tab and labeled accordingly. Feel free to open bug tickets and make feature requests.
