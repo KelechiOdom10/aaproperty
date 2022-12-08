@@ -42,7 +42,10 @@ export const getServerSideProps: GetServerSideProps = async ({
   query,
   res,
 }) => {
-  res.setHeader("Cache-Control", `s-maxage=172800, stale-while-revalidate`);
+  res.setHeader(
+    "Cache-Control",
+    "public, s-maxage=31536000, stale-while-revalidate"
+  );
 
   const purpose = query.purpose || "buy";
   const location = query.location as string;
