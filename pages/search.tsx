@@ -38,7 +38,12 @@ function searchPage({
 
 export default searchPage;
 
-export const getServerSideProps: GetServerSideProps = async ({ query }) => {
+export const getServerSideProps: GetServerSideProps = async ({
+  query,
+  res,
+}) => {
+  res.setHeader("Cache-Control", `s-maxage=172800, stale-while-revalidate`);
+
   const purpose = query.purpose || "buy";
   const location = query.location as string;
   const type = query.type as string;
@@ -46,7 +51,6 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   const maxPrice = query.maxPrice || 1000000;
   const minRooms = query.minRooms || 0;
   const minBaths = query.minBaths || 0;
-  const areaMax = query.areaMax || 35000;
 
   let searchQuery = supabase
     .from<definitions["property"]>("property")
