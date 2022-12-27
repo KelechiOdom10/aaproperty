@@ -8,7 +8,6 @@ import {
   Text,
   Stack,
 } from "@chakra-ui/react";
-import React from "react";
 import { FaBed, FaBath, FaVectorSquare } from "react-icons/fa";
 import { definitions } from "types/supabase";
 import ImageCarousel from "./ImageCarousel";

@@ -6,7 +6,6 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import React from "react";
 import { INTRO_LIST } from "@/data/introList";
 import { CustomLink } from "../CustomLink";
 
@@ -22,17 +21,16 @@ export default function IntroSection() {
       maxW="6xl"
     >
       <Heading fontSize={{ base: "2xl", md: "4xl" }} textAlign="center">
-        This is the headline
+        Welcome to AA Property Services UK
       </Heading>
       <Text
         fontSize={{ base: "sm", md: "md" }}
         w={{ base: "95%", md: "60%" }}
         textAlign="center"
       >
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque iste vel
-        mollitia architecto, rem perferendis quod quas animi odio aut iusto
-        dolorem dicta nesciunt veniam veritatis corporis repudiandae sint
-        beatae.
+        Our team is dedicated to providing top-notch accommodation and
+        property-related services to meet the needs of each and every one of our
+        clients
       </Text>
       <SimpleGrid
         columns={{ base: 1, sm: 2, md: 4 }}

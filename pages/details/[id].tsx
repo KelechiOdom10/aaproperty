@@ -5,6 +5,7 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import { definitions } from "types/supabase";
 import SimilarProperties from "@/components/SimilarProperties";
 import PropertyContactSection from "@/components/sections/PropertyContactSection";
+import Meta from "@/components/layout/Meta";
 
 type Props = {
   property: definitions["property"];
@@ -14,6 +15,11 @@ type Props = {
 function DetailPage({ property, similarProperties }: Props) {
   return (
     <Box>
+      <Meta
+        meta={{
+          title: `${property.title} in ${property.address} | AA Property UK`,
+        }}
+      />
       <Flex maxW="7xl" mx="auto" mb={20}>
         <Grid
           position="relative"

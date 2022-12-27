@@ -1,6 +1,11 @@
+import Meta from "@/components/layout/Meta";
 import PrivacySection from "@/components/sections/PrivacySection";
-import React from "react";
 
 export default function PrivacyPage() {
-  return <PrivacySection />;
+  return (
+    <>
+      <Meta meta={{ title: "Privacy | AA Property UK" }} />
+      <PrivacySection />
+    </>
+  );
 }

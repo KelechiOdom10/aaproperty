@@ -1,6 +1,11 @@
+import Meta from "@/components/layout/Meta";
 import PaperworkSection from "@/components/sections/PaperworkSection";
-import React from "react";
 
 export default function PaperworkPage() {
-  return <PaperworkSection />;
+  return (
+    <>
+      <Meta meta={{ title: "Paperwork | AA Property UK" }} />
+      <PaperworkSection />
+    </>
+  );
 }

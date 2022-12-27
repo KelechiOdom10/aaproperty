@@ -7,7 +7,6 @@ import {
   VStack,
   Icon,
 } from "@chakra-ui/react";
-import React from "react";
 import ContactFormDetails from "./ContactFormDetails";
 import { AiFillPhone, AiFillMail, AiFillEnvironment } from "react-icons/ai";
 
@@ -36,9 +35,9 @@ export default function ContactForm() {
             Contact Information
           </Heading>
           <Text fontSize={{ base: "sm", md: "md" }} textAlign="left">
-            {" "}
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod
+            You can reach us via email, phone, or by visiting us at our office.
+            Our team is always happy to help with any questions or inquiries you
+            may have.
           </Text>
           <VStack align="start" color="white" spacing={6} pt={6}>
             <HStack as="a" href="tel:+44 20 7794 6559">
