@@ -1,5 +1,4 @@
 import { Heading, Link, VStack, Text } from "@chakra-ui/react";
-import React from "react";
 import { CustomLink } from "../CustomLink";
 
 export default function ManagementSection() {

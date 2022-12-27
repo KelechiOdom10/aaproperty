@@ -6,7 +6,6 @@ import {
   Stack,
   StackDivider,
 } from "@chakra-ui/react";
-import React from "react";
 import ManagementSection from "./ManagementSection";
 import ValuationAndConsultancySection from "./ValuationAndConsultancySection";
 

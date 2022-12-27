@@ -1,5 +1,4 @@
 import { Flex, Box, Heading, Text, VStack } from "@chakra-ui/react";
-import React from "react";
 import HeroTabs from "@/components/HeroTabs";
 
 export default function Hero() {

@@ -7,7 +7,6 @@ import {
   VStack,
   Link,
 } from "@chakra-ui/react";
-import React from "react";
 import Feature from "@/components/Feature";
 import { CustomLink } from "../CustomLink";
 

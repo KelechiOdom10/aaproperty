@@ -1,5 +1,4 @@
 import { Stack, Flex, Heading, Text, Button, VStack } from "@chakra-ui/react";
-import React from "react";
 import Feature from "@/components/Feature";
 
 export default function FeatureSection() {
