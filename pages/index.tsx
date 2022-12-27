@@ -6,6 +6,7 @@ import ContactUsSection from "@/components/sections/ContactUsSection";
 import { GetStaticProps } from "next";
 import { supabase } from "@/utils/supabaseClient";
 import { definitions } from "types/supabase";
+import Meta from "@/components/layout/Meta";
 
 type Props = {
   properties: definitions["property"][];
@@ -14,6 +15,11 @@ type Props = {
 export default function Home({ properties }: Props) {
   return (
     <>
+      <Meta
+        meta={{
+          title: `AA Property UK > Search Property to Buy, Rent, House Prices, Estate Agents`,
+        }}
+      />
       <Hero />
       <IntroSection />
       <TopFeaturedSection properties={properties} />
