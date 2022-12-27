@@ -4,7 +4,6 @@ import {
   Heading,
   HStack,
   Icon,
-  Link,
   Stack,
 } from "@chakra-ui/react";
 import React, { ReactChild, ReactNode } from "react";

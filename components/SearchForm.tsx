@@ -201,6 +201,7 @@ function SearchForm({
                 purpose === "rent" ? "(pcm)" : ""
               }`}</Text>
               <RangeSlider
+                // eslint-disable-next-line jsx-a11y/aria-proptypes
                 aria-label={["Min Price", "Max Price"]}
                 min={0}
                 max={maxValue}

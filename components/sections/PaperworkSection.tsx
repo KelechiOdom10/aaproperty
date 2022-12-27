@@ -82,6 +82,7 @@ export default function PaperworkSection() {
     return () => {
       events.off("hashChangeStart", () => {});
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [asPath, events]);
 
   return (
