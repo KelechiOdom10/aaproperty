@@ -54,9 +54,11 @@ export default function PrivacySection() {
       </PrivacyText>
       <PrivacySubHeading> Who we are </PrivacySubHeading>
       <PrivacyText>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic eum harum,
-        animi dolorum eligendi onsectetur adipisicing elit. Hic eum harum, animi
-        dolorum eligend!
+        We are a limited liability company registered in England and have
+        several years of experience in sales, lettings, and property management.
+        Our team is dedicated to providing top-notch accommodation and
+        property-related services to meet the needs of each and every one of our
+        client
       </PrivacyText>
       <PrivacySubHeading> Personal information we collect </PrivacySubHeading>
       <PrivacyText>

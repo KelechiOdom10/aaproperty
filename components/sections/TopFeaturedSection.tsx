@@ -1,4 +1,3 @@
-import React from "react";
 import {
   VStack,
   Flex,
@@ -33,15 +32,15 @@ export default function TopFeaturedSection({ properties }: Props) {
             mb={{ base: 6, md: 0 }}
           >
             <Heading fontSize={{ base: "2xl", md: "4xl" }}>
-              Top Featured Dealss
+              Top Featured Deals
             </Heading>
             <Text
               fontSize={{ base: "sm", md: "md" }}
               color="gray.500"
               textAlign={{ base: "center", md: "start" }}
             >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptatibus assumenda
+              Find your dream home with our top featured properties
+              hand-selected by our experts
             </Text>
           </VStack>
 

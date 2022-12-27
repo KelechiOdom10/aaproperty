@@ -7,7 +7,6 @@ import {
   useBreakpointValue,
   AspectRatio,
 } from "@chakra-ui/react";
-import React from "react";
 import { CustomLink } from "../CustomLink";
 
 export default function ContactUsSection() {
@@ -42,14 +41,13 @@ export default function ContactUsSection() {
         textAlign={{ base: "center", md: "start" }}
       >
         <Heading fontSize={{ base: "xl", md: "2xl" }} my={4}>
-          Lorem ipsum dolor sit amet consectetur
+          Get in Touch
         </Heading>
         <Text
           fontSize={{ base: "sm", md: "md" }}
           w={{ base: "full", md: "80%" }}
         >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe maxime
-          laborum eveniet quaerat aepe maxime r adipisici
+          {`Have a question or ready to start your real estate journey with us? We'd love to hear from you. Contact u or give us a call to speak with one of our team members.`}
         </Text>
         <Button
           as={CustomLink}

@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, Heading, Text, VStack } from "@chakra-ui/react";
 import ContactForm from "@/components/ContactForm";
 
@@ -25,8 +24,7 @@ export default function contact() {
           w={{ base: "full", md: "50%" }}
           pb={4}
         >
-          Let’s find a home that’s perfect for you Lorem ipsum dolor sit amet
-          consectetur, adipisicing elit.
+          Let’s find a home that’s perfect for you
         </Text>
         <Box
           position={{ base: "absolute", md: "relative" }}
