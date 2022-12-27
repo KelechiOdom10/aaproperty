@@ -3,7 +3,6 @@ import SearchResults from "@/components/SearchResults";
 import { supabase } from "@/utils/supabaseClient";
 import { Flex, Box } from "@chakra-ui/react";
 import { GetServerSideProps } from "next";
-import React from "react";
 import { definitions } from "types/supabase";
 
 function searchPage({
@@ -48,7 +47,7 @@ export const getServerSideProps: GetServerSideProps = async ({
   );
 
   const purpose = query.purpose || "buy";
-  const location = query.location as string;
+  const location = (query.location as string) || "";
   const type = query.type as string;
   const minPrice = query.minPrice || 0;
   const maxPrice = query.maxPrice || 1000000;
