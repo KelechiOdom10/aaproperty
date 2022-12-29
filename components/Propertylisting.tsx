@@ -105,7 +105,8 @@ export default function PropertyListing({ item }: Props) {
         <Text
           w="90%"
           color="gray.600"
-          fontSize={{ base: "xs", md: "sm" }}
+          fontSize={{ base: "sm", md: "md" }}
+          noOfLines={2}
           whiteSpace="normal"
         >
           {item.address}, {item.postalCode}

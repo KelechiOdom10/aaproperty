@@ -42,17 +42,17 @@ export default function ContactForm() {
           <VStack align="start" color="white" spacing={6} pt={6}>
             <HStack as="a" href="tel:+44 20 7794 6559">
               <Icon as={AiFillPhone} color="yellow.300" w={5} h={5} />
-              <Text fontSize={{ base: "xs", md: "sm" }}>020 7794 6559</Text>
+              <Text fontSize={{ base: "sm", md: "md" }}>020 7794 6559</Text>
             </HStack>
             <HStack as="a" href="mailto:aa@aapropertyuk.com">
               <Icon as={AiFillMail} color="yellow.300" w={5} h={5} />
-              <Text fontSize={{ base: "xs", md: "sm" }}>
+              <Text fontSize={{ base: "sm", md: "md" }}>
                 aa@aapropertyuk.com
               </Text>
             </HStack>
             <HStack>
               <Icon as={AiFillEnvironment} color="yellow.300" w={5} h={5} />
-              <Text fontSize={{ base: "xs", md: "sm" }} textAlign="left">
+              <Text fontSize={{ base: "sm", md: "md" }} textAlign="left">
                 392 Finchley Road, London NW2 2HR
               </Text>
             </HStack>

@@ -43,10 +43,7 @@ export default function ContactUsSection() {
         <Heading fontSize={{ base: "xl", md: "2xl" }} my={4}>
           Get in Touch
         </Heading>
-        <Text
-          fontSize={{ base: "sm", md: "md" }}
-          w={{ base: "full", md: "80%" }}
-        >
+        <Text w={{ base: "full", md: "80%" }}>
           {`Have a question or ready to start your real estate journey with us? We'd love to hear from you. Contact u or give us a call to speak with one of our team members.`}
         </Text>
         <Button

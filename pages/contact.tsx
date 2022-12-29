@@ -21,17 +21,9 @@ export default function contact() {
           <Heading color="white" fontSize={{ base: "2xl", md: "3xl" }} pt={4}>
             Get in Touch
           </Heading>
-          <Text
-            color="white"
-            fontSize={{ base: "sm", md: "lg" }}
-            w={{ base: "full", md: "50%" }}
-            pb={4}
-          >
-            Let’s find a home that’s perfect for you
-          </Text>
           <Box
             position={{ base: "absolute", md: "relative" }}
-            bottom={{ base: "-780px", sm: "-700px", md: "-20px" }}
+            bottom={{ base: "-800px", sm: "-700px", md: "-20px" }}
             right={{ md: 0 }}
             width="100%"
           >

@@ -26,7 +26,7 @@ export default function ServicesSection() {
           <Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}>
             Services
           </Heading>
-          <Text fontSize={{ base: "md", md: "xl" }}>
+          <Text fontSize={{ base: "md", md: "xl" }} fontWeight="semibold">
             We offer a wide range of services to make finding your dream home
             easy
           </Text>

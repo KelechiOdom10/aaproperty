@@ -17,7 +17,11 @@ export default function Hero() {
         <Heading color="white" fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}>
           Find your dream home
         </Heading>
-        <Text color="white" fontSize={{ base: "md", md: "xl" }}>
+        <Text
+          color="white"
+          fontSize={{ base: "md", md: "xl" }}
+          fontWeight="semibold"
+        >
           Let’s find a home that’s perfect for you
         </Text>
         <Box
