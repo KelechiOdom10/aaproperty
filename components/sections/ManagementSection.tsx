@@ -12,10 +12,7 @@ export default function ManagementSection() {
       <Heading fontSize={{ base: "xl", md: "2xl", lg: "3xl" }}>
         Management
       </Heading>
-      <Text
-        fontSize={{ base: "sm", md: "md" }}
-        textAlign={{ base: "center", md: "start" }}
-      >
+      <Text textAlign={{ base: "center", md: "start" }} px={3}>
         AA property services UK LTD provide a full property management service
         where professional prospective tenants are fully vetted by a reputable
         referencing service. We also cater for employees of various blue chip

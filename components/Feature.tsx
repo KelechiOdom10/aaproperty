@@ -8,9 +8,7 @@ export default function Feature({ children }: Props) {
   return (
     <HStack align="center" p={2} spacing={3}>
       <Icon as={AiOutlineCheck} size="2em" color="brand.400" />
-      <Text textAlign="left" fontSize={{ base: "sm", md: "md" }}>
-        {children}
-      </Text>
+      <Text textAlign="left">{children}</Text>
     </HStack>
   );
 }

@@ -10,15 +10,13 @@ import {
 import React, { ReactNode } from "react";
 
 const TermsHeading = ({ children }: { children: ReactNode }) => (
-  <Heading fontSize={{ base: "sm", md: "md" }} py={2}>
+  <Heading fontSize={{ base: "md", md: "lg" }} py={2}>
     {children}
   </Heading>
 );
 
 const TermsText = ({ children }: { children: ReactNode }) => (
-  <Text as="div" fontSize={{ base: "sm", md: "md" }}>
-    {children}
-  </Text>
+  <Text as="div">{children}</Text>
 );
 
 export default function TermsSection() {

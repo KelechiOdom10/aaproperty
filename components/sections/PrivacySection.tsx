@@ -14,9 +14,7 @@ import { BsArrowRightCircle } from "react-icons/bs";
 import { CustomLink } from "../CustomLink";
 
 const PrivacyText = ({ children }: { children: ReactNode }) => (
-  <Text as="div" fontSize={{ base: "sm", md: "md" }}>
-    {children}
-  </Text>
+  <Text as="div">{children}</Text>
 );
 
 const PrivacySubHeading = ({ children }: { children: ReactNode }) => (
@@ -27,7 +25,7 @@ const PrivacySubHeading = ({ children }: { children: ReactNode }) => (
     pt={6}
   >
     <Icon as={BsArrowRightCircle} fontSize={{ base: "md", md: "lg" }} />
-    <Heading fontSize={{ base: "sm", md: "md" }}>{children}</Heading>
+    <Heading fontSize={{ base: "md", md: "lg" }}>{children}</Heading>
   </HStack>
 );
 

@@ -23,12 +23,13 @@ export default function ValuationAndConsultancySection() {
         textAlign={{ base: "center", md: "left" }}
         spacing={4}
         w={{ base: "full", md: "55%" }}
-        p={4}
+        py={4}
+        px={2}
       >
         <Heading fontSize={{ base: "xl", md: "2xl", lg: "3xl" }}>
           Valuation and Professional Consultancy
         </Heading>
-        <Text fontSize={{ base: "sm", md: "md" }}>
+        <Text>
           {" "}
           Our Chartered Surveyors are RICS Registered Valuers and offer a
           comprehensive range of professional services for both corporate and
