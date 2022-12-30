@@ -40,7 +40,7 @@ const PropertyIconItem = ({
 }) => (
   <>
     <Icon as={icon} fontSize={{ base: iconWidthBase, md: iconWidthMd }} />
-    <Text fontSize={{ base: "sm", md: "md" }}>{text}</Text>
+    <Text fontSize={{ base: "15px", md: "16px" }}>{text}</Text>
   </>
 );
 
