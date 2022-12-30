@@ -85,7 +85,7 @@ export default function PropertyResultListing({
               <Text
                 w="90%"
                 color="gray.600"
-                fontSize={{ base: "xs", md: "sm" }}
+                fontSize={{ base: "sm", md: "md" }}
                 whiteSpace="normal"
               >
                 {property.address}, {property.postalCode}
@@ -112,7 +112,7 @@ export default function PropertyResultListing({
                 noOfLines={2}
                 w="90%"
                 color="gray.600"
-                fontSize={{ base: "xs", md: "sm" }}
+                fontSize={{ base: "sm", md: "md" }}
                 whiteSpace="normal"
                 mb={4}
               >

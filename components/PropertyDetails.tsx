@@ -45,7 +45,7 @@ const PropertyIconItem = ({
 );
 
 const KeyFeatures = ({ text }: { text: any }) => (
-  <HStack spacing={3} align="center" fontSize={{ base: "sm", md: "md" }}>
+  <HStack spacing={3} align="center">
     <Icon
       as={HiOutlineLocationMarker}
       color="brand.500"

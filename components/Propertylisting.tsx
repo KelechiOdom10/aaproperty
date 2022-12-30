@@ -23,12 +23,7 @@ type PropertyIconProps = {
 
 export const PropertyIconContainer = ({ children }: PropertyIconProps) => {
   return (
-    <HStack
-      spacing={1}
-      align="center"
-      color="gray.600"
-      fontSize={{ base: "xs", md: "sm" }}
-    >
+    <HStack spacing={1} align="center" color="gray.600" fontSize="sm">
       {children}
     </HStack>
   );
@@ -105,7 +100,7 @@ export default function PropertyListing({ item }: Props) {
         <Text
           w="90%"
           color="gray.600"
-          fontSize={{ base: "sm", md: "md" }}
+          fontSize={{ base: "sm", md: "15px" }}
           noOfLines={2}
           whiteSpace="normal"
         >
