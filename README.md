@@ -40,13 +40,13 @@ NEXT_PUBLIC_GOOGLE_MAPS_API_KEY={YOUR GOOGLE MAPS API KEY}
 Install deps:
 
 ```bash
-npm install
+pnpm install
 ```
 
 Run Next dev server:
 
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 ## Nice to haves
